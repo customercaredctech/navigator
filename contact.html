@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - AdmissionNavigator</title>
+    <!-- FontAwesome Icon CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="header">
+        <div class="nav-container">
+            <a href="index.html" class="logo" id="headerLogo">
+                <div class="logo-icon">AN</div>
+                <span>AdmissionNavigator</span>
+            </a>
+            
+            <nav class="nav-bar">
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="destinations.html" class="nav-link">Study Destinations</a></li>
+                    <li><a href="blog.html" class="nav-link">Blog</a></li>
+                    <li><a href="careers.html" class="nav-link">Careers</a></li>
+                    <li><a href="story.html" class="nav-link">Our Story</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact Us</a></li>
+                </ul>
+            </nav>
+            
+            <div class="nav-actions">
+                <a href="login.html" class="btn btn-secondary btn-sm">Sign In</a>
+                <a href="register.html" class="btn btn-accent btn-sm">Apply Now</a>
+            </div>
+            
+            <button class="menu-toggle" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Contact Hero -->
+    <section class="destinations-hero" style="background: linear-gradient(to bottom, #ECFDF5, var(--bg-page));">
+        <div class="container max-w-800">
+            <span class="section-tag">Reach Out</span>
+            <h1>Get in Touch</h1>
+            <p class="section-desc" style="margin-bottom: 0;">Have questions about study permits, program eligibility, or partner integrations? Speak with our admissions counselors today.</p>
+        </div>
+    </section>
+
+    <!-- Contact Form & Details Section -->
+    <section class="section">
+        <div class="container contact-layout">
+            
+            <!-- Contact details -->
+            <div class="contact-info-block">
+                <div>
+                    <span class="section-tag">Office Locations</span>
+                    <h2 style="font-size: 2rem; margin-bottom: 1.5rem;">We are here to guide you</h2>
+                    <p style="color: var(--text-muted); font-size: 0.975rem;">Our headquarters is based in Toronto, Canada, with support operations in Vancouver and global representative hubs.</p>
+                </div>
+                
+                <div class="contact-detail-card">
+                    <div class="contact-detail-icon"><i class="fas fa-map-marker-alt"></i></div>
+                    <div class="contact-detail-content">
+                        <h3>Toronto HQ</h3>
+                        <p>120 Adelaide St W, Suite 2500</p>
+                        <p>Toronto, ON M5H 1T1, Canada</p>
+                    </div>
+                </div>
+
+                <div class="contact-detail-card">
+                    <div class="contact-detail-icon"><i class="fas fa-phone-alt"></i></div>
+                    <div class="contact-detail-content">
+                        <h3>Phone & Inquiries</h3>
+                        <p>Student support: <a href="tel:+14165550190">+1 (416) 555-0190</a></p>
+                        <p>Partnerships: <a href="tel:+18005550143">+1 (800) 555-0143</a></p>
+                    </div>
+                </div>
+
+                <div class="contact-detail-card">
+                    <div class="contact-detail-icon"><i class="fas fa-envelope"></i></div>
+                    <div class="contact-detail-content">
+                        <h3>Email Contacts</h3>
+                        <p>Admissions: <a href="mailto:apply@admissionnavigator.com">apply@admissionnavigator.com</a></p>
+                        <p>Support: <a href="mailto:support@admissionnavigator.com">support@admissionnavigator.com</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Form -->
+            <div class="contact-form-container">
+                <h3>Send Us a Message</h3>
+                <form id="contactForm" novalidate>
+                    <div class="form-grid-2">
+                        <div class="form-group">
+                            <label for="fullName">Full Name *</label>
+                            <input type="text" id="fullName" placeholder="John Doe" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="emailAddr">Email Address *</label>
+                            <input type="email" id="emailAddr" placeholder="john@example.com" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-grid-2">
+                        <div class="form-group">
+                            <label for="phoneNum">Phone Number</label>
+                            <input type="tel" id="phoneNum" placeholder="+1 (555) 000-0000">
+                        </div>
+                        <div class="form-group">
+                            <label for="countryInterest">Country of Interest *</label>
+                            <select id="countryInterest" required>
+                                <option value="">Select country...</option>
+                                <option value="ca">Canada</option>
+                                <option value="gb">United Kingdom</option>
+                                <option value="us">United States</option>
+                                <option value="au">Australia</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" rows="5" placeholder="Tell us about your educational background and goals..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-full">Submit Inquiry</button>
+                </form>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- FAQ Accordion Section -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="text-center max-w-600">
+                <span class="section-tag">Frequently Asked Questions</span>
+                <h2 class="section-title">Answers to Your Queries</h2>
+                <p class="section-desc">Have simple questions? Read through our FAQ list below to find immediate answers.</p>
+            </div>
+            
+            <div class="faq-accordion">
+                <!-- FAQ Item 1 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Does AdmissionNavigator charge any service fees for student matches?</h3>
+                        <div class="faq-icon"><i class="fas fa-plus"></i></div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>No, building your profile and obtaining matching college recommendation lists on AdmissionNavigator is 100% free of charge. We are funded by our partner academic institutions.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Do you assist with student visa applications?</h3>
+                        <div class="faq-icon"><i class="fas fa-plus"></i></div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we have licensed immigration advisors (including Regulated Canadian Immigration Consultants - RCICs) on staff. Once you obtain an Letter of Acceptance (LOA) from your matched school, we walk you step-by-step through the student permit application process.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How long does the matching assessment take?</h3>
+                        <div class="faq-icon"><i class="fas fa-plus"></i></div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Our interactive student profile registration wizard contains exactly 10 questions and takes less than 5 minutes to complete. Based on your answers, matching options are immediately loaded on your dashboard.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What are the minimum GPA or English score requirements?</h3>
+                        <div class="faq-icon"><i class="fas fa-plus"></i></div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Requirements vary greatly by country and program. While top university master's degrees might require a 75%+ GPA and a 6.5 IELTS score, many excellent diploma programs have lower requirements. Our wizard checks all variations to find matching options.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">
+                    <div class="logo-icon" style="background: white; color: var(--primary);">AN</div>
+                    <span style="color: white;">AdmissionNavigator</span>
+                </a>
+                <p>Simplifying international student admissions, matching programs, and global visa procedures through technology.</p>
+                <div class="footer-socials">
+                    <a href="#" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            
+            <div>
+                <h3 class="footer-title">Destinations</h3>
+                <ul class="footer-links">
+                    <li><a href="destinations.html">Study in Canada</a></li>
+                    <li><a href="destinations.html">Study in United Kingdom</a></li>
+                    <li><a href="destinations.html">Study in United States</a></li>
+                    <li><a href="destinations.html">Study in Australia</a></li>
+                    <li><a href="destinations.html">Study in Ireland</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h3 class="footer-title">Company</h3>
+                <ul class="footer-links">
+                    <li><a href="story.html">Our Story</a></li>
+                    <li><a href="careers.html">Careers</a></li>
+                    <li><a href="blog.html">Blog & Visa Guides</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-newsletter">
+                <h3 class="footer-title">Stay Updated</h3>
+                <p>Subscribe to our newsletter for country guides, scholarship announcements, and visa updates.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your email address" class="newsletter-input" required aria-label="Newsletter email address">
+                    <button type="submit" class="newsletter-btn" aria-label="Subscribe"><i class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; <span id="footerYear"></span> AdmissionNavigator. All rights reserved. &nbsp;|&nbsp; Designed by <a href="#" style="color: var(--accent); opacity:1; font-weight:600;">DCTechOfficial</a></p>
+            <div class="footer-bottom-links">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="legal.html">Terms of Service</a>
+                <a href="legal.html">Legal Notices</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>

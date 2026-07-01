@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Profile - AdmissionNavigator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1E1B4B;
+            --primary-light: #312E81;
+            --primary-bright: #4F46E5;
+            --accent: #FF5E36;
+            --success: #10B981;
+            --warning: #F59E0B;
+            --bg-page: #F1F5F9;
+            --border: #E2E8F0;
+            --text-dark: #0F172A;
+            --text-muted: #64748B;
+            --shadow: 0 4px 24px rgba(30,27,75,0.10);
+            --shadow-lg: 0 16px 48px rgba(30,27,75,0.16);
+            --radius: 20px;
+            --radius-sm: 12px;
+        }
+
+        * { margin:0; padding:0; box-sizing:border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #1E1B4B 0%, #312E81 60%, #4F46E5 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            padding: 2rem 1rem 3rem;
+        }
+
+        /* ── CARD WRAPPER ── */
+        .profile-card {
+            width: 100%;
+            max-width: 780px;
+            background: white;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-lg);
+            overflow: hidden;
+        }
+
+        /* ── HERO BANNER ── */
+        .card-hero {
+            background: linear-gradient(135deg, #4F46E5 0%, #7C3AED 50%, #FF5E36 100%);
+            padding: 2.5rem 2.5rem 3.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .card-hero::before {
+            content: '';
+            position: absolute; top: -80px; right: -80px;
+            width: 240px; height: 240px; border-radius: 50%;
+            background: rgba(255,255,255,.07);
+        }
+        .card-hero::after {
+            content: '';
+            position: absolute; bottom: -50px; left: -50px;
+            width: 180px; height: 180px; border-radius: 50%;
+            background: rgba(255,255,255,.05);
+        }
+
+        .hero-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            position: relative; z-index: 1;
+        }
+        .brand-logo {
+            display: flex; align-items: center; gap: .6rem;
+            font-family: 'Outfit', sans-serif; font-size: 1rem;
+            font-weight: 800; color: rgba(255,255,255,.9);
+            text-decoration: none;
+        }
+        .brand-icon {
+            width: 32px; height: 32px; border-radius: 8px;
+            background: rgba(255,255,255,.2);
+            display: flex; align-items: center; justify-content: center;
+            font-size: .8rem; font-weight: 700; color: white;
+        }
+        .hero-actions { display: flex; gap: .75rem; }
+        .hero-btn {
+            padding: .45rem 1.1rem; border-radius: 999px;
+            font-size: .8rem; font-weight: 600; cursor: pointer;
+            border: 1.5px solid rgba(255,255,255,.4);
+            color: white; background: rgba(255,255,255,.12);
+            text-decoration: none; display: inline-flex; align-items: center; gap: .4rem;
+            transition: all .2s;
+        }
+        .hero-btn:hover { background: rgba(255,255,255,.25); }
+        .hero-btn.solid { background: white; color: var(--primary); border-color: white; }
+        .hero-btn.solid:hover { background: #f0f0ff; }
+
+        /* Avatar + Name */
+        .hero-profile {
+            display: flex; align-items: flex-end; gap: 1.5rem;
+            margin-top: 2rem; position: relative; z-index: 1;
+        }
+        .avatar {
+            width: 80px; height: 80px; border-radius: 50%;
+            background: linear-gradient(135deg, #FF5E36, #ff8c6b);
+            display: flex; align-items: center; justify-content: center;
+            font-family: 'Outfit', sans-serif; font-size: 1.75rem;
+            font-weight: 800; color: white;
+            border: 4px solid rgba(255,255,255,.3);
+            flex-shrink: 0;
+            box-shadow: 0 8px 24px rgba(0,0,0,.2);
+        }
+        .hero-name h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.75rem; font-weight: 800;
+            color: white; margin-bottom: .3rem;
+        }
+        .hero-name p {
+            color: rgba(255,255,255,.8); font-size: .9rem;
+            display: flex; align-items: center; gap: .5rem;
+        }
+        .status-pill {
+            display: inline-flex; align-items: center; gap: .35rem;
+            background: rgba(255,255,255,.15); border: 1px solid rgba(255,255,255,.25);
+            color: white; font-size: .72rem; font-weight: 600;
+            padding: .25rem .75rem; border-radius: 999px;
+        }
+        .status-dot { width: 6px; height: 6px; border-radius: 50%; background: #34D399; }
+
+        /* ── BODY ── */
+        .card-body { padding: 2rem 2.5rem 2.5rem; }
+
+        /* Section title */
+        .section-label {
+            display: flex; align-items: center; gap: .6rem;
+            font-family: 'Outfit', sans-serif; font-size: .8rem;
+            font-weight: 700; text-transform: uppercase;
+            letter-spacing: .1em; color: var(--text-muted);
+            margin-bottom: 1rem; margin-top: 1.75rem;
+        }
+        .section-label:first-of-type { margin-top: 0; }
+        .section-label::after {
+            content: ''; flex: 1; height: 1px; background: var(--border);
+        }
+
+        /* Field Grid */
+        .field-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+        .field-grid.single { grid-template-columns: 1fr; }
+
+        .field {
+            background: #F8FAFC;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            padding: 1rem 1.25rem;
+            display: flex; align-items: center; gap: 1rem;
+            transition: all .2s;
+        }
+        .field:hover { border-color: #c7d2fe; background: #f5f3ff; }
+
+        .field-icon {
+            width: 38px; height: 38px; border-radius: 10px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1rem; flex-shrink: 0;
+        }
+        .field-text { overflow: hidden; }
+        .field-label {
+            font-size: .7rem; font-weight: 600;
+            text-transform: uppercase; letter-spacing: .07em;
+            color: var(--text-muted); margin-bottom: .2rem;
+        }
+        .field-value {
+            font-size: .95rem; font-weight: 600;
+            color: var(--text-dark);
+            white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+        }
+        .field-value.accent { color: var(--primary-bright); }
+        .field-value.success { color: var(--success); }
+
+        /* Destination flags row */
+        .flags-row { display: flex; flex-wrap: wrap; gap: .75rem; }
+        .flag-chip {
+            display: flex; align-items: center; gap: .5rem;
+            background: #F8FAFC; border: 1px solid var(--border);
+            border-radius: 999px; padding: .45rem 1rem .45rem .5rem;
+            font-size: .875rem; font-weight: 600; color: var(--text-dark);
+        }
+        .flag-chip img {
+            width: 26px; height: 18px; border-radius: 3px; object-fit: cover;
+            border: 1px solid var(--border);
+        }
+
+        /* Budget highlight */
+        .budget-highlight {
+            background: linear-gradient(135deg, rgba(79,70,229,.06), rgba(255,94,54,.06));
+            border: 1px solid #c7d2fe;
+            border-radius: var(--radius-sm);
+            padding: 1.25rem 1.5rem;
+            display: flex; align-items: center; justify-content: space-between;
+            gap: 1rem;
+        }
+        .budget-amount {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2rem; font-weight: 800;
+            background: linear-gradient(135deg, var(--primary-bright), var(--accent));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+        .budget-label { font-size: .8rem; color: var(--text-muted); margin-top: .15rem; }
+
+        /* Account credentials */
+        .cred-row {
+            display: flex; align-items: center; gap: 1rem;
+            padding: .875rem 1.25rem;
+            background: #F8FAFC; border: 1px solid var(--border);
+            border-radius: var(--radius-sm); margin-bottom: .75rem;
+        }
+        .cred-row:last-child { margin-bottom: 0; }
+        .cred-icon {
+            width: 36px; height: 36px; border-radius: 9px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: .9rem; flex-shrink: 0;
+        }
+        .cred-text { flex: 1; overflow: hidden; }
+        .cred-text label { font-size: .7rem; font-weight: 700; text-transform: uppercase; letter-spacing: .07em; color: var(--text-muted); display: block; }
+        .cred-text span { font-size: .9rem; font-weight: 600; color: var(--text-dark); }
+        .cred-badge {
+            font-size: .7rem; font-weight: 700; padding: .2rem .6rem;
+            border-radius: 999px; background: #ECFDF5; color: #065F46;
+        }
+
+        /* Footer action row */
+        .card-footer {
+            padding: 1.25rem 2.5rem;
+            border-top: 1px solid var(--border);
+            display: flex; align-items: center; justify-content: space-between;
+            gap: 1rem; background: #FAFAFE;
+        }
+        .footer-note { font-size: .8rem; color: var(--text-muted); }
+        .footer-note strong { color: var(--text-dark); }
+        .footer-actions { display: flex; gap: .75rem; }
+        .btn {
+            display: inline-flex; align-items: center; gap: .5rem;
+            padding: .6rem 1.4rem; border-radius: 999px; font-size: .875rem;
+            font-weight: 600; cursor: pointer; text-decoration: none;
+            transition: all .2s; border: none;
+        }
+        .btn-outline {
+            background: white; color: var(--primary);
+            border: 1.5px solid var(--border);
+        }
+        .btn-outline:hover { border-color: var(--primary-bright); color: var(--primary-bright); }
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-bright), #7C3AED);
+            color: white;
+        }
+        .btn-primary:hover { opacity: .9; transform: translateY(-1px); }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            body { padding: 1rem .75rem 2rem; }
+            .card-hero { padding: 1.75rem 1.5rem 3rem; }
+            .card-body { padding: 1.5rem 1.5rem 2rem; }
+            .card-footer { flex-direction: column; align-items: flex-start; gap: .75rem; }
+            .field-grid { grid-template-columns: 1fr; }
+            .hero-profile { flex-direction: column; align-items: flex-start; gap: 1rem; }
+            .hero-name h1 { font-size: 1.4rem; }
+            .hero-actions { flex-wrap: wrap; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="profile-card">
+
+    <!-- ── HERO ── -->
+    <div class="card-hero">
+        <div class="hero-top">
+            <a href="index.html" class="brand-logo">
+                <div class="brand-icon">AN</div>
+                AdmissionNavigator
+            </a>
+            <div class="hero-actions">
+                <a href="register.html" class="hero-btn"><i class="fas fa-edit"></i> Edit</a>
+                <a href="dashboard.html" class="hero-btn solid"><i class="fas fa-th-large"></i> Dashboard</a>
+            </div>
+        </div>
+
+        <div class="hero-profile">
+            <div class="avatar" id="avatarEl">JS</div>
+            <div class="hero-name">
+                <h1 id="fullNameEl">John Student</h1>
+                <p>
+                    <span id="nationalityEl">International Student</span>
+                    &nbsp;·&nbsp;
+                    <span class="status-pill"><span class="status-dot"></span>Application Active</span>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ── BODY ── -->
+    <div class="card-body">
+
+        <!-- Personal Information -->
+        <div class="section-label"><i class="fas fa-user" style="color:var(--primary-bright)"></i> Personal Information</div>
+        <div class="field-grid">
+            <div class="field">
+                <div class="field-icon" style="background:rgba(79,70,229,.08);color:var(--primary-bright)"><i class="fas fa-user"></i></div>
+                <div class="field-text">
+                    <div class="field-label">Full Name</div>
+                    <div class="field-value" id="fName">—</div>
+                </div>
+            </div>
+            <div class="field">
+                <div class="field-icon" style="background:rgba(255,94,54,.08);color:var(--accent)"><i class="fas fa-flag"></i></div>
+                <div class="field-text">
+                    <div class="field-label">Citizenship / Nationality</div>
+                    <div class="field-value" id="fNationality">—</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Academic Background -->
+        <div class="section-label"><i class="fas fa-graduation-cap" style="color:#7C3AED"></i> Academic Background</div>
+        <div class="field-grid">
+            <div class="field">
+                <div class="field-icon" style="background:rgba(124,58,237,.08);color:#7C3AED"><i class="fas fa-graduation-cap"></i></div>
+                <div class="field-text">
+                    <div class="field-label">Highest Education Level</div>
+                    <div class="field-value" id="fEduLevel">—</div>
+                </div>
+            </div>
+            <div class="field">
+                <div class="field-icon" style="background:rgba(16,185,129,.08);color:var(--success)"><i class="fas fa-chart-line"></i></div>
+                <div class="field-text">
+                    <div class="field-label">GPA / Academic Score</div>
+                    <div class="field-value success" id="fGpa">—</div>
+                </div>
+            </div>
+            <div class="field">
+                <div class="field-icon" style="background:rgba(14,165,233,.08);color:#0EA5E9"><i class="fas fa-language"></i></div>
+                <div class="field-text">
+                    <div class="field-label">English Test</div>
+                    <div class="field-value" id="fLangTest">—</div>
+                </div>
+            </div>
+            <div class="field">
+                <div class="field-icon" style="background:rgba(245,158,11,.08);color:var(--warning)"><i class="fas fa-laptop-code"></i></div>
+                <div class="field-text">
+                    <div class="field-label">Preferred Field of Study</div>
+                    <div class="field-value" id="fStream">—</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Study Preferences -->
+        <div class="section-label"><i class="fas fa-globe" style="color:var(--accent)"></i> Study Preferences</div>
+
+        <!-- Target Countries -->
+        <div style="margin-bottom:1rem;">
+            <div class="field-label" style="margin-bottom:.6rem; font-size:.75rem; font-weight:700; text-transform:uppercase; letter-spacing:.07em; color:var(--text-muted);">
+                Target Study Destinations
+            </div>
+            <div class="flags-row" id="fDestinations">
+                <div class="flag-chip"><span style="color:var(--text-muted);font-size:.85rem;">—</span></div>
+            </div>
+        </div>
+
+        <div class="field-grid" style="margin-bottom:1rem;">
+            <div class="field">
+                <div class="field-icon" style="background:rgba(79,70,229,.08);color:var(--primary-bright)"><i class="fas fa-calendar-alt"></i></div>
+                <div class="field-text">
+                    <div class="field-label">Target Intake</div>
+                    <div class="field-value accent" id="fIntake">—</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Annual Budget -->
+        <div class="budget-highlight">
+            <div>
+                <div class="field-label" style="margin-bottom:.3rem;">Annual Tuition Budget</div>
+                <div class="budget-amount" id="fBudget">$25,000</div>
+                <div class="budget-label">Canadian Dollars per year (CAD)</div>
+            </div>
+            <i class="fas fa-wallet" style="font-size:2.5rem;color:var(--primary-bright);opacity:.2;"></i>
+        </div>
+
+        <!-- Account Credentials -->
+        <div class="section-label"><i class="fas fa-lock" style="color:var(--success)"></i> Account Credentials</div>
+
+        <div class="cred-row">
+            <div class="cred-icon" style="background:rgba(16,185,129,.08);color:var(--success)"><i class="fas fa-envelope"></i></div>
+            <div class="cred-text">
+                <label>Email Address</label>
+                <span id="fEmail">—</span>
+            </div>
+            <span class="cred-badge"><i class="fas fa-check"></i> Registered</span>
+        </div>
+
+        <div class="cred-row">
+            <div class="cred-icon" style="background:rgba(79,70,229,.08);color:var(--primary-bright)"><i class="fas fa-phone"></i></div>
+            <div class="cred-text">
+                <label>Mobile Phone</label>
+                <span id="fPhone">—</span>
+            </div>
+        </div>
+
+        <div class="cred-row">
+            <div class="cred-icon" style="background:rgba(245,158,11,.08);color:var(--warning)"><i class="fas fa-key"></i></div>
+            <div class="cred-text">
+                <label>Password</label>
+                <span>••••••••••</span>
+            </div>
+            <a href="forgot-password.html" style="font-size:.75rem;font-weight:600;color:var(--primary-bright);text-decoration:none;">Change</a>
+        </div>
+
+    </div><!-- /card-body -->
+
+    <!-- ── FOOTER ── -->
+    <div class="card-footer">
+        <div class="footer-note">
+            Profile created via <strong>10-Step Assessment Wizard</strong>
+            &nbsp;·&nbsp; Designed by <strong style="color:var(--accent);">DCTechOfficial</strong>
+        </div>
+        <div class="footer-actions">
+            <a href="register.html" class="btn btn-outline"><i class="fas fa-edit"></i> Edit Profile</a>
+            <a href="dashboard.html" class="btn btn-primary"><i class="fas fa-th-large"></i> Go to Dashboard</a>
+        </div>
+    </div>
+
+</div><!-- /profile-card -->
+
+<script>
+// ── Load from localStorage ──
+const raw = localStorage.getItem('admissionNavigatorUser');
+const p   = raw ? JSON.parse(raw) : null;
+
+// Demo fallback (so client sees populated UI even without registering)
+const demo = {
+    name:        'John Doe',
+    email:       'john.doe@example.com',
+    phone:       '+1 (647) 555-0192',
+    nationality: 'India',
+    education:   "Bachelor's Degree",
+    gpaScale:    'Percentage',
+    gpaValue:    '78%',
+    destination: 'Canada',
+    destList:    ['Canada','United Kingdom'],
+    intake:      'Fall 2026',
+    langTest:    'IELTS',
+    langScore:   '6.5',
+    stream:      'IT & Computer Science',
+    budget:      '25000'
+};
+
+const d = p || demo;
+
+// Helpers
+function initials(name) {
+    return (name || 'ST').trim().split(' ').map(w=>w[0]).join('').substring(0,2).toUpperCase();
+}
+function formatBudget(val) {
+    return '$' + Number(val || 25000).toLocaleString();
+}
+function countryToFlag(name) {
+    const map = {
+        'Canada':'ca','United Kingdom':'gb','United States':'us',
+        'Australia':'au','Ireland':'ie','Germany':'de'
+    };
+    return map[name] || null;
+}
+
+// ── Fill fields ──
+const name = d.name || 'Student';
+document.getElementById('avatarEl').textContent      = initials(name);
+document.getElementById('fullNameEl').textContent    = name;
+document.getElementById('nationalityEl').textContent = (d.nationality || 'International') + ' Citizen';
+
+document.getElementById('fName').textContent        = name;
+document.getElementById('fNationality').textContent = d.nationality || '—';
+document.getElementById('fEduLevel').textContent    = d.education  || '—';
+document.getElementById('fGpa').textContent         = d.gpaValue ? (d.gpaValue + (d.gpaScale === 'Percentage' ? '' : ' / ' + (d.gpaScale === 'gpa4' ? '4.0' : '10.0'))) : '—';
+document.getElementById('fIntake').textContent      = d.intake    || '—';
+document.getElementById('fStream').textContent      = d.stream    || '—';
+document.getElementById('fBudget').textContent      = formatBudget(d.budget);
+document.getElementById('fEmail').textContent       = d.email     || '—';
+document.getElementById('fPhone').textContent       = d.phone     || '—';
+
+// Language Test
+let langStr = d.langTest || '—';
+if (d.langScore && d.langTest && d.langTest !== 'None') langStr += ' — ' + d.langScore;
+document.getElementById('fLangTest').textContent = langStr;
+
+// Destinations (support both single string and array)
+let dests = [];
+if (Array.isArray(d.destList) && d.destList.length)   dests = d.destList;
+else if (d.destination) dests = [d.destination];
+
+const flagsRow = document.getElementById('fDestinations');
+if (dests.length > 0) {
+    flagsRow.innerHTML = '';
+    dests.forEach(c => {
+        const code = countryToFlag(c);
+        flagsRow.innerHTML += `
+        <div class="flag-chip">
+            ${code ? `<img src="https://flagcdn.com/w80/${code}.png" alt="${c}">` : '<i class="fas fa-globe" style="color:var(--text-muted)"></i>'}
+            ${c}
+        </div>`;
+    });
+}
+</script>
+
+</body>
+</html>

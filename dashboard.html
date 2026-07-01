@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Portal Dashboard - AdmissionNavigator</title>
+    <!-- FontAwesome Icon CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body style="background-color: #F8FAFC;">
+
+    <div class="dashboard-layout">
+        
+        <!-- Sidebar -->
+        <aside class="dashboard-sidebar">
+            <div class="dashboard-sidebar-top">
+                <a href="index.html" class="logo">
+                    <div class="logo-icon">AN</div>
+                    <span style="color: white;">Admissions</span>
+                </a>
+                
+                <ul class="dashboard-menu">
+                    <li><a href="#" class="dashboard-menu-link active"><i class="fas fa-columns"></i> Dashboard</a></li>
+                    <li><a href="#" class="dashboard-menu-link" onclick="alert('Matched Program list is highlighted on your dashboard cards.')"><i class="fas fa-graduation-cap"></i> Matched Programs</a></li>
+                    <li><a href="#" class="dashboard-menu-link" onclick="alert('Applications will show up here once you click Apply on recommendation cards.')"><i class="fas fa-folder-open"></i> My Applications</a></li>
+                    <li><a href="#" class="dashboard-menu-link" onclick="alert('Scroll to your Document Checklist panel on the dashboard to upload files.')"><i class="fas fa-file-invoice"></i> Document Checklist</a></li>
+                    <li><a href="#" class="dashboard-menu-link" onclick="alert('Visa filing routes are simulated. Consultations are available.')"><i class="fas fa-passport"></i> Visa & Immigration</a></li>
+                </ul>
+            </div>
+            
+            <div class="dashboard-sidebar-bottom">
+                <div class="dashboard-user-widget">
+                    <div class="dashboard-user-avatar" id="avatarInitials">JD</div>
+                    <div class="dashboard-user-info">
+                        <h4 id="sidebarUserName">John Doe</h4>
+                        <p id="sidebarUserEmail">john@example.com</p>
+                    </div>
+                    <a href="login.html" title="Log Out" style="color: rgba(255,255,255,0.6);"><i class="fas fa-sign-out-alt"></i></a>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Workspace -->
+        <main class="dashboard-main">
+            
+            <!-- Dashboard Header -->
+            <header class="dashboard-header">
+                <div>
+                    <h1 id="welcomeHeading">Welcome, Guest!</h1>
+                    <p style="color: var(--text-muted); margin-bottom: 0;">Here are your matching study options and application progress updates.</p>
+                </div>
+                
+                <div class="dashboard-notifications">
+                    <div class="notif-bell" onclick="alert('Notification: Complete your English language test document upload to unlock immediate visa processing!')">
+                        <i class="fas fa-bell"></i>
+                        <div class="badge"></div>
+                    </div>
+                    <a href="student-profile.html" class="btn btn-primary btn-sm" style="border-radius: 8px; background: linear-gradient(135deg,#4F46E5,#FF5E36); border:none;"><i class="fas fa-id-card"></i> New Profile View</a>
+                    <a href="index.html" class="btn btn-secondary btn-sm" style="border-radius: 8px;"><i class="fas fa-home"></i> Main Site</a>
+                </div>
+            </header>
+
+            <!-- Stats strip cards -->
+            <section class="dashboard-stats-grid">
+                
+                <div class="dashboard-stat-card">
+                    <div class="dashboard-stat-icon"><i class="fas fa-tasks"></i></div>
+                    <div class="dashboard-stat-info">
+                        <h3 id="statProgress">75%</h3>
+                        <p>Profile Completeness</p>
+                    </div>
+                </div>
+
+                <div class="dashboard-stat-card">
+                    <div class="dashboard-stat-icon"><i class="fas fa-university"></i></div>
+                    <div class="dashboard-stat-info">
+                        <h3 id="statMatches">12 Options</h3>
+                        <p>Matched Programs</p>
+                    </div>
+                </div>
+
+                <div class="dashboard-stat-card">
+                    <div class="dashboard-stat-icon"><i class="fas fa-passport"></i></div>
+                    <div class="dashboard-stat-info">
+                        <h3 id="statVisaChance">High</h3>
+                        <p>Visa Success Odds</p>
+                    </div>
+                </div>
+                
+            </section>
+
+            <!-- Content Area Split Panel -->
+            <section class="dashboard-content-grid">
+                
+                <!-- Left Panel: Program Matches -->
+                <div>
+                    <div class="dashboard-panel">
+                        <div class="dashboard-panel-title">
+                            <h3>Recommended Programs For You</h3>
+                            <span style="font-size: 0.85rem; color: var(--text-muted);" id="recBasisLabel">Based on IT stream</span>
+                        </div>
+                        
+                        <div class="recommendations-list" id="recListContainer">
+                            <!-- Custom matching cards dynamically injected via script -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Panel: Checklist and Consultation -->
+                <div>
+                    <!-- Document Checklist -->
+                    <div class="dashboard-panel" style="padding-bottom: 2rem;">
+                        <h3 class="dashboard-panel-title" style="margin-bottom: 1.5rem;">Document Checklist</h3>
+                        <div class="checklist-list">
+                            
+                            <!-- Passport -->
+                            <div class="checklist-item checked">
+                                <div class="checklist-item-left">
+                                    <i class="fas fa-check-circle"></i>
+                                    <div>
+                                        <strong>Valid Passport</strong>
+                                        <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0;">Verified page stamps</p>
+                                    </div>
+                                </div>
+                                <span class="checklist-status-badge uploaded">Verified</span>
+                            </div>
+
+                            <!-- Transcripts -->
+                            <div class="checklist-item checked">
+                                <div class="checklist-item-left">
+                                    <i class="fas fa-check-circle"></i>
+                                    <div>
+                                        <strong>Academic Marksheet</strong>
+                                        <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0;">High school / Bachelor scores</p>
+                                    </div>
+                                </div>
+                                <span class="checklist-status-badge uploaded">Verified</span>
+                            </div>
+
+                            <!-- English score sheet -->
+                            <div class="checklist-item pending" id="englishChecklistItem">
+                                <div class="checklist-item-left">
+                                    <i class="far fa-circle" id="englishCheckIcon"></i>
+                                    <div>
+                                        <strong id="englishCheckTitle">Language Test Sheet</strong>
+                                        <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0;" id="englishCheckDesc">IELTS certificate copy</p>
+                                    </div>
+                                </div>
+                                <button class="btn btn-secondary btn-sm" id="englishUploadBtn" style="padding: 0.35rem 0.75rem; font-size: 0.8rem; border-radius: 4px;" onclick="simulateDocumentUpload()">Upload</button>
+                            </div>
+
+                            <!-- LOA -->
+                            <div class="checklist-item pending">
+                                <div class="checklist-item-left">
+                                    <i class="far fa-circle" style="opacity: 0.4;"></i>
+                                    <div>
+                                        <strong style="opacity: 0.7;">Letter of Acceptance (LOA)</strong>
+                                        <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0;">Requires college approval</p>
+                                    </div>
+                                </div>
+                                <span class="checklist-status-badge" style="background-color: var(--bg-alt); color: var(--text-muted);">Locked</span>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Immigration consultation -->
+                    <div class="dashboard-panel" style="background: linear-gradient(135deg, var(--primary), var(--primary-light)); color: white;">
+                        <h3 style="color: white; font-size: 1.25rem; margin-bottom: 0.75rem;"><i class="fas fa-handshake" style="color: var(--accent); margin-right: 0.5rem;"></i> Schedule RCIC Counsel</h3>
+                        <p style="font-size: 0.9rem; color: rgba(255,255,255,0.8); margin-bottom: 1.5rem;">Receive guidance on GIC requirements, student visa processing queues, and PR eligibility under Express Entry.</p>
+                        <button class="btn btn-accent btn-full btn-sm" onclick="alert('Successfully booked! An RCIC advisor will reach out for a simulated Zoom call.')">Book 1-on-1 Counsel</button>
+                    </div>
+                </div>
+
+            </section>
+        </main>
+
+    </div>
+
+    <!-- Dashboard customized profile script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Retrieve registration values
+            const userStr = localStorage.getItem('admissionNavigatorUser');
+            let user = {
+                name: 'John Doe',
+                email: 'john@example.com',
+                nationality: 'India',
+                education: 'Bachelors',
+                destination: 'Canada',
+                intake: 'Fall 2026',
+                stream: 'IT & Computer Science',
+                budget: '25000'
+            };
+            
+            if (userStr) {
+                user = JSON.parse(userStr);
+            }
+
+            // Update text elements
+            document.getElementById('welcomeHeading').textContent = `Welcome Back, ${user.name}!`;
+            document.getElementById('sidebarUserName').textContent = user.name;
+            document.getElementById('sidebarUserEmail').textContent = user.email;
+            
+            // Set Avatar Initials
+            const initials = user.name.split(' ').map(n => n[0]).join('').substring(0, 2).toUpperCase();
+            document.getElementById('avatarInitials').textContent = initials;
+            
+            // Set dynamic filters details
+            document.getElementById('recBasisLabel').textContent = `Matched for ${user.stream} in ${user.destination} under $${Number(user.budget).toLocaleString()} CAD/Yr`;
+
+            // Adjust statistics based on country selection
+            const visaChanceEl = document.getElementById('statVisaChance');
+            if (user.nationality === 'India' || user.nationality === 'Philippines' || user.nationality === 'Pakistan') {
+                visaChanceEl.textContent = 'Very High (94%)';
+                visaChanceEl.style.color = 'var(--success)';
+            } else {
+                visaChanceEl.textContent = 'High (88%)';
+            }
+
+            // Custom programs matching data
+            const itPrograms = [
+                {
+                    title: 'Post-Graduate Certificate in Mobile Application Development',
+                    college: 'Conestoga College (Kitchener Campus)',
+                    location: 'Ontario, Canada',
+                    tuition: '$17,200 CAD/Yr',
+                    duration: '2 Years',
+                    pgwp: 'Eligible for 3-Year PGWP'
+                },
+                {
+                    title: 'Diploma in Software Engineering Technology',
+                    college: 'Centennial College (Progress Campus)',
+                    location: 'Toronto, Ontario, Canada',
+                    tuition: '$18,450 CAD/Yr',
+                    duration: '3 Years',
+                    pgwp: 'Eligible for 3-Year PGWP'
+                },
+                {
+                    title: 'Master of Science in Computer Science (Applied)',
+                    college: 'Northeastern University (Vancouver Campus)',
+                    location: 'British Columbia, Canada',
+                    tuition: '$29,000 CAD/Yr',
+                    duration: '2 Years',
+                    pgwp: 'Eligible for 3-Year PGWP'
+                }
+            ];
+
+            const businessPrograms = [
+                {
+                    title: 'Post-Graduate Diploma in Global Business Management',
+                    college: 'Humber College (Lakeshore Campus)',
+                    location: 'Toronto, Ontario, Canada',
+                    tuition: '$16,800 CAD/Yr',
+                    duration: '2 Years',
+                    pgwp: 'Eligible for 3-Year PGWP'
+                },
+                {
+                    title: 'Diploma in Business Administration (Co-op)',
+                    college: 'Douglas College (New Westminster)',
+                    location: 'British Columbia, Canada',
+                    tuition: '$17,500 CAD/Yr',
+                    duration: '2 Years',
+                    pgwp: 'Eligible for 3-Year PGWP'
+                },
+                {
+                    title: 'MBA in Global Leadership Studies',
+                    college: 'Vancouver Island University',
+                    location: 'British Columbia, Canada',
+                    tuition: '$24,500 CAD/Yr',
+                    duration: '2 Years',
+                    pgwp: 'Eligible for 3-Year PGWP'
+                }
+            ];
+
+            const defaultPrograms = [
+                {
+                    title: 'Advanced Diploma in Technology Management',
+                    college: 'Seneca Polytechnic College',
+                    location: 'Toronto, Ontario, Canada',
+                    tuition: '$19,200 CAD/Yr',
+                    duration: '3 Years',
+                    pgwp: 'Eligible for 3-Year PGWP'
+                },
+                {
+                    title: 'Graduate Certificate in Cybersecurity Systems',
+                    college: 'George Brown College',
+                    location: 'Toronto, Ontario, Canada',
+                    tuition: '$18,900 CAD/Yr',
+                    duration: '2 Years',
+                    pgwp: 'Eligible for 3-Year PGWP'
+                }
+            ];
+
+            let activeMatchList = defaultPrograms;
+            if (user.stream.includes('IT')) {
+                activeMatchList = itPrograms;
+            } else if (user.stream.includes('Business')) {
+                activeMatchList = businessPrograms;
+            }
+
+            // Render program cards
+            const listContainer = document.getElementById('recListContainer');
+            listContainer.innerHTML = '';
+            
+            activeMatchList.forEach((prog, index) => {
+                const card = document.createElement('div');
+                card.className = 'rec-card';
+                card.innerHTML = `
+                    <div class="rec-info">
+                        <h4>${prog.title}</h4>
+                        <p style="font-weight: 500; color: var(--text-dark); margin-bottom: 0.25rem;"><i class="fas fa-university" style="color: var(--primary-bright); margin-right: 0.5rem;"></i>${prog.college}</p>
+                        <p style="font-size: 0.85rem; margin-bottom: 0.75rem;"><i class="fas fa-map-marker-alt" style="margin-right: 0.5rem;"></i>${prog.location}</p>
+                        <div class="rec-meta">
+                            <span>${prog.duration}</span>
+                            <span>${prog.tuition}</span>
+                            <span style="color: var(--success); background-color: rgba(16,185,129,0.08);">${prog.pgwp}</span>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary btn-sm" onclick="triggerSimulatedApplication(this, '${prog.title}')" style="border-radius: 8px;">Apply Now</button>
+                `;
+                listContainer.appendChild(card);
+            });
+            
+            document.getElementById('statMatches').textContent = `${activeMatchList.length} Options`;
+        });
+
+        // Simulating single-click portal application
+        function triggerSimulatedApplication(buttonEl, programName) {
+            buttonEl.disabled = true;
+            buttonEl.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Submitting...';
+            
+            setTimeout(() => {
+                buttonEl.className = 'btn btn-secondary btn-sm';
+                buttonEl.style.backgroundColor = '#ECFDF5';
+                buttonEl.style.borderColor = '#A7F3D0';
+                buttonEl.style.color = '#065F46';
+                buttonEl.innerHTML = '<i class="fas fa-check"></i> Applied';
+                
+                alert(`Application for "${programName}" submitted successfully through portal integration. Transcripts and Passport forwarded.`);
+            }, 1200);
+        }
+
+        // Simulate Document Uploading
+        function simulateDocumentUpload() {
+            const item = document.getElementById('englishChecklistItem');
+            const icon = document.getElementById('englishCheckIcon');
+            const title = document.getElementById('englishCheckTitle');
+            const desc = document.getElementById('englishCheckDesc');
+            const btn = document.getElementById('englishUploadBtn');
+            
+            btn.disabled = true;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Loading...';
+            
+            setTimeout(() => {
+                item.className = 'checklist-item checked';
+                icon.className = 'fas fa-check-circle';
+                icon.style.opacity = '1';
+                icon.style.color = 'var(--success)';
+                title.style.opacity = '1';
+                desc.style.opacity = '1';
+                
+                // Replace button with Verified badge
+                const badge = document.createElement('span');
+                badge.className = 'checklist-status-badge uploaded';
+                badge.textContent = 'Verified';
+                btn.replaceWith(badge);
+                
+                // Update progress completeness
+                document.getElementById('statProgress').textContent = '90%';
+                
+                alert('English Language Test scorecard uploaded and verified via Optical Character Recognition (OCR). Complete profile score raised to 90%.');
+            }, 1200);
+        }
+    </script>
+</body>
+</html>

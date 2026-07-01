@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - User Management - AdmissionNavigator</title>
+    <!-- FontAwesome Icon CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Dedicated styles for Admin Portal Dashboard tables & badges */
+        .admin-table-container {
+            overflow-x: auto;
+            margin-top: 1.5rem;
+        }
+        
+        .admin-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 0.925rem;
+        }
+        
+        .admin-table th {
+            background-color: var(--bg-alt);
+            color: var(--text-muted);
+            font-weight: 600;
+            padding: 1rem 1.25rem;
+            border-bottom: 2px solid var(--border-color);
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 0.05em;
+        }
+        
+        .admin-table td {
+            padding: 1.25rem;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-body);
+            vertical-align: middle;
+        }
+        
+        .admin-table tbody tr {
+            transition: var(--transition-fast);
+        }
+        
+        .admin-table tbody tr:hover {
+            background-color: rgba(79, 70, 229, 0.02);
+        }
+        
+        /* Status Badges */
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            font-size: 0.775rem;
+            font-weight: 700;
+            padding: 0.25rem 0.6rem;
+            border-radius: 4px;
+            text-transform: uppercase;
+        }
+        
+        .status-badge.applied {
+            background-color: rgba(79, 70, 229, 0.08);
+            color: var(--primary-bright);
+        }
+        
+        .status-badge.verified {
+            background-color: rgba(16, 185, 129, 0.08);
+            color: var(--success);
+        }
+        
+        .status-badge.loa-issued {
+            background-color: rgba(14, 165, 233, 0.08);
+            color: var(--secondary);
+        }
+        
+        .status-badge.visa-approved {
+            background-color: #ECFDF5;
+            color: #065F46;
+            border: 1px solid #A7F3D0;
+        }
+        
+        /* Action buttons in Table */
+        .btn-action-group {
+            display: flex;
+            gap: 0.4rem;
+        }
+        
+        .btn-action {
+            width: 32px;
+            height: 32px;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+            background-color: white;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: var(--text-muted);
+            transition: var(--transition-fast);
+        }
+        
+        .btn-action:hover {
+            color: var(--text-dark);
+            border-color: var(--text-muted);
+            background-color: var(--bg-alt);
+        }
+        
+        .btn-action.approve-docs:hover {
+            color: var(--success);
+            border-color: var(--success);
+            background-color: rgba(16, 185, 129, 0.05);
+        }
+        
+        .btn-action.issue-loa:hover {
+            color: var(--secondary);
+            border-color: var(--secondary);
+            background-color: rgba(14, 165, 233, 0.05);
+        }
+        
+        .btn-action.approve-visa:hover {
+            color: var(--success);
+            border-color: var(--success);
+            background-color: #ECFDF5;
+        }
+        
+        .btn-action.delete-user:hover {
+            color: var(--danger);
+            border-color: var(--danger);
+            background-color: rgba(239, 68, 68, 0.05);
+        }
+        
+        /* Search bar in Admin Dashboard */
+        .admin-search-bar {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            background-color: white;
+            border: 1px solid var(--border-color);
+            padding: 0.6rem 1.25rem;
+            border-radius: 8px;
+            width: 320px;
+        }
+        
+        .admin-search-bar input {
+            border: none;
+            outline: none;
+            width: 100%;
+            font-size: 0.9rem;
+        }
+        
+        .admin-search-bar i {
+            color: var(--text-muted);
+        }
+    </style>
+</head>
+<body style="background-color: #F8FAFC;">
+
+    <div class="dashboard-layout">
+        
+        <!-- Sidebar -->
+        <aside class="dashboard-sidebar" style="background-color: #0F172A;">
+            <div class="dashboard-sidebar-top">
+                <a href="index.html" class="logo">
+                    <div class="logo-icon" style="background: white; color: #0F172A;">AN</div>
+                    <span style="color: white;">Admin Panel</span>
+                </a>
+                
+                <ul class="dashboard-menu">
+                    <li><a href="#" class="dashboard-menu-link active"><i class="fas fa-users-cog"></i> User Pipeline</a></li>
+                    <li><a href="#" class="dashboard-menu-link" onclick="alert('Institutions registries lists are pre-populated.')"><i class="fas fa-university"></i> Colleges (1.5k)</a></li>
+                    <li><a href="#" class="dashboard-menu-link" onclick="alert('Immigration routes list is configured.')"><i class="fas fa-passport"></i> RCIC Advisory</a></li>
+                    <li><a href="#" class="dashboard-menu-link" onclick="alert('System audit logs are secure.')"><i class="fas fa-shield-alt"></i> System Security</a></li>
+                </ul>
+            </div>
+            
+            <div class="dashboard-sidebar-bottom" style="border-top-color: rgba(255,255,255,0.08);">
+                <div class="dashboard-user-widget">
+                    <div class="dashboard-user-avatar" style="background-color: var(--primary-bright);">AD</div>
+                    <div class="dashboard-user-info">
+                        <h4 style="color: white;">Admin Account</h4>
+                        <p style="color: var(--text-muted);">System Operator</p>
+                    </div>
+                    <a href="admin-login.html" title="Sign Out" style="color: rgba(255,255,255,0.6);"><i class="fas fa-sign-out-alt"></i></a>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Workspace -->
+        <main class="dashboard-main">
+            
+            <!-- Dashboard Header -->
+            <header class="dashboard-header" style="margin-bottom: 2rem;">
+                <div>
+                    <h1>Student Admissions Pipeline</h1>
+                    <p style="color: var(--text-muted); margin-bottom: 0;">Review registered applicants, verify documents, issue Letters of Acceptance (LOA), and update immigration records.</p>
+                </div>
+                
+                <div class="dashboard-notifications">
+                    <div class="admin-search-bar">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="adminSearchInput" placeholder="Search by name, stream or citizenship..." onkeyup="filterAdminTable()">
+                    </div>
+                    <a href="index.html" class="btn btn-secondary btn-sm" style="border-radius: 8px;"><i class="fas fa-home"></i> Main Site</a>
+                </div>
+            </header>
+
+            <!-- Stats strip cards -->
+            <section class="dashboard-stats-grid" style="margin-bottom: 2.5rem;">
+                
+                <div class="dashboard-stat-card">
+                    <div class="dashboard-stat-icon" style="background-color: rgba(79,70,229,0.08); color: var(--primary-bright);"><i class="fas fa-user-friends"></i></div>
+                    <div class="dashboard-stat-info">
+                        <h3 id="statTotalUsers">6</h3>
+                        <p>Total Registered Students</p>
+                    </div>
+                </div>
+
+                <div class="dashboard-stat-card">
+                    <div class="dashboard-stat-icon" style="background-color: rgba(16, 185, 129, 0.08); color: var(--success);"><i class="fas fa-file-signature"></i></div>
+                    <div class="dashboard-stat-info">
+                        <h3 id="statVerified">2</h3>
+                        <p>Credentials Verified</p>
+                    </div>
+                </div>
+
+                <div class="dashboard-stat-card">
+                    <div class="dashboard-stat-icon" style="background-color: rgba(14, 165, 233, 0.08); color: var(--secondary);"><i class="fas fa-university"></i></div>
+                    <div class="dashboard-stat-info">
+                        <h3 id="statLoa">1</h3>
+                        <p>LOAs Issued</p>
+                    </div>
+                </div>
+                
+                <div class="dashboard-stat-card">
+                    <div class="dashboard-stat-icon" style="background-color: #ECFDF5; color: #065F46; border: 1px solid #A7F3D0;"><i class="fas fa-passport"></i></div>
+                    <div class="dashboard-stat-info">
+                        <h3 id="statVisas">1</h3>
+                        <p>Visas Approved</p>
+                    </div>
+                </div>
+                
+            </section>
+
+            <!-- Main Panel: Application lists -->
+            <section class="dashboard-panel" style="padding: 2.5rem; width: 100%;">
+                <div class="dashboard-panel-title" style="margin-bottom: 1.5rem;">
+                    <div>
+                        <h3 style="font-size: 1.3rem;">Admissions Register</h3>
+                        <p style="font-size: 0.85rem; color: var(--text-muted); font-weight: normal; margin-top: 0.25rem; margin-bottom: 0;">Click on action controls to update applicant states in real time.</p>
+                    </div>
+                    <button class="btn btn-secondary btn-sm" onclick="resetAdminRegistry()" style="border-radius: 6px; font-size: 0.8rem; padding: 0.4rem 0.80rem;"><i class="fas fa-undo"></i> Reset List</button>
+                </div>
+                
+                <div class="admin-table-container">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>Student Name</th>
+                                <th>Citizenship</th>
+                                <th>Preferred Stream</th>
+                                <th>CGPA / Score</th>
+                                <th>Max Budget</th>
+                                <th>Admission Status</th>
+                                <th style="text-align: right;">Action Controls</th>
+                            </tr>
+                        </thead>
+                        <tbody id="adminTableBody">
+                            <!-- Dynamic Table Rows Injected Here -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+
+    </div>
+
+    <!-- Admin Dashboard Logic -->
+    <script>
+        // Default Mock Students
+        const defaultStudents = [
+            { id: 1, name: "Emeka Okafor", country: "Nigeria", stream: "IT & Computer Science", gpa: "82% (Percentage)", budget: "22,000", status: "docs-verified" },
+            { id: 2, name: "Priya Sharma", country: "India", stream: "Business & Management", gpa: "7.8 (CGPA)", budget: "18,000", status: "loa-issued" },
+            { id: 3, name: "Wei Zhang", country: "China", stream: "Engineering & Tech", gpa: "3.85 (GPA 4.0)", budget: "35,000", status: "applied" },
+            { id: 4, name: "Sofia Rossi", country: "Brazil", stream: "Engineering & Tech", gpa: "80% (Percentage)", budget: "28,000", status: "visa-approved" },
+            { id: 5, name: "Juan Perez", country: "Mexico", stream: "Business & Management", gpa: "8.5 (CGPA)", budget: "14,000", status: "docs-verified" }
+        ];
+
+        let studentsList = [];
+
+        function initAdminRegistry() {
+            studentsList = [...defaultStudents];
+            
+            // Check if there is a registered user from localStorage
+            const userStr = localStorage.getItem('admissionNavigatorUser');
+            if (userStr) {
+                const user = JSON.parse(userStr);
+                // Prepend registered user
+                studentsList.unshift({
+                    id: Date.now(), // unique temp ID
+                    name: user.name,
+                    country: user.nationality,
+                    stream: user.stream,
+                    gpa: "7.9 (CGPA)", // mock score if missing
+                    budget: user.budget,
+                    status: "applied" // start state
+                });
+            }
+            
+            renderAdminTable();
+        }
+
+        function renderAdminTable() {
+            const tbody = document.getElementById('adminTableBody');
+            tbody.innerHTML = '';
+            
+            studentsList.forEach(student => {
+                const row = document.createElement('tr');
+                row.id = `row-${student.id}`;
+                row.innerHTML = `
+                    <td style="font-weight: 600; color: var(--text-dark);">${student.name}</td>
+                    <td>${student.country}</td>
+                    <td>${student.stream}</td>
+                    <td>${student.gpa}</td>
+                    <td>$${Number(student.budget).toLocaleString()} CAD</td>
+                    <td>${getStatusBadgeHTML(student.status)}</td>
+                    <td style="text-align: right;">
+                        <div class="btn-action-group" style="justify-content: flex-end;">
+                            <button class="btn-action approve-docs" onclick="updateStudentStatus(${student.id}, 'docs-verified')" title="Verify Documents"><i class="fas fa-file-signature"></i></button>
+                            <button class="btn-action issue-loa" onclick="updateStudentStatus(${student.id}, 'loa-issued')" title="Issue LOA"><i class="fas fa-university"></i></button>
+                            <button class="btn-action approve-visa" onclick="updateStudentStatus(${student.id}, 'visa-approved')" title="Approve Student Visa"><i class="fas fa-passport"></i></button>
+                            <button class="btn-action delete-user" onclick="deleteStudent(${student.id})" title="Delete Application"><i class="fas fa-trash-alt"></i></button>
+                        </div>
+                    </td>
+                `;
+                tbody.appendChild(row);
+            });
+            
+            calculateMetrics();
+        }
+
+        function getStatusBadgeHTML(status) {
+            if (status === 'applied') {
+                return `<span class="status-badge applied"><i class="fas fa-arrow-right"></i> Applied</span>`;
+            } else if (status === 'docs-verified') {
+                return `<span class="status-badge verified"><i class="fas fa-file-signature"></i> Docs Verified</span>`;
+            } else if (status === 'loa-issued') {
+                return `<span class="status-badge loa-issued"><i class="fas fa-university"></i> LOA Issued</span>`;
+            } else if (status === 'visa-approved') {
+                return `<span class="status-badge visa-approved"><i class="fas fa-check-circle"></i> Visa Approved</span>`;
+            }
+            return `<span class="status-badge">${status}</span>`;
+        }
+
+        function updateStudentStatus(studentId, newStatus) {
+            const student = studentsList.find(s => s.id === studentId);
+            if (student) {
+                student.status = newStatus;
+                
+                // If it is the localStorage user, let's sync back to their student dashboard!
+                const userStr = localStorage.getItem('admissionNavigatorUser');
+                if (userStr) {
+                    const user = JSON.parse(userStr);
+                    if (user.name === student.name) {
+                        // We can save state, but simple alert is perfect
+                    }
+                }
+                
+                renderAdminTable();
+            }
+        }
+
+        function deleteStudent(studentId) {
+            const row = document.getElementById(`row-${studentId}`);
+            if (row) {
+                // Apply a simple fade-out visual
+                row.style.opacity = '0';
+                row.style.transform = 'scale(0.95)';
+                row.style.transition = 'all 0.3s ease';
+                
+                setTimeout(() => {
+                    studentsList = studentsList.filter(s => s.id !== studentId);
+                    renderAdminTable();
+                }, 300);
+            }
+        }
+
+        function calculateMetrics() {
+            const total = studentsList.length;
+            const verified = studentsList.filter(s => s.status === 'docs-verified').length;
+            const loa = studentsList.filter(s => s.status === 'loa-issued').length;
+            const visa = studentsList.filter(s => s.status === 'visa-approved').length;
+            
+            document.getElementById('statTotalUsers').textContent = total;
+            document.getElementById('statVerified').textContent = verified;
+            document.getElementById('statLoa').textContent = loa;
+            document.getElementById('statVisas').textContent = visa;
+        }
+
+        function filterAdminTable() {
+            const input = document.getElementById('adminSearchInput');
+            const filter = input.value.toLowerCase();
+            
+            studentsList.forEach(student => {
+                const row = document.getElementById(`row-${student.id}`);
+                if (row) {
+                    const match = student.name.toLowerCase().includes(filter) ||
+                                  student.country.toLowerCase().includes(filter) ||
+                                  student.stream.toLowerCase().includes(filter);
+                    if (match) {
+                        row.style.display = '';
+                    } else {
+                        row.style.display = 'none';
+                    }
+                }
+            });
+        }
+
+        function resetAdminRegistry() {
+            localStorage.removeItem('admissionNavigatorUser');
+            initAdminRegistry();
+        }
+
+        // Initialize on load
+        document.addEventListener('DOMContentLoaded', initAdminRegistry);
+    </script>
+</body>
+</html>

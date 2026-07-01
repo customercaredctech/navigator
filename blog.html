@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog & Study Abroad Guides - AdmissionNavigator</title>
+    <!-- FontAwesome Icon CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="header">
+        <div class="nav-container">
+            <a href="index.html" class="logo" id="headerLogo">
+                <div class="logo-icon">AN</div>
+                <span>AdmissionNavigator</span>
+            </a>
+            
+            <nav class="nav-bar">
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="destinations.html" class="nav-link">Study Destinations</a></li>
+                    <li><a href="blog.html" class="nav-link">Blog</a></li>
+                    <li><a href="careers.html" class="nav-link">Careers</a></li>
+                    <li><a href="story.html" class="nav-link">Our Story</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact Us</a></li>
+                </ul>
+            </nav>
+            
+            <div class="nav-actions">
+                <a href="login.html" class="btn btn-secondary btn-sm">Sign In</a>
+                <a href="register.html" class="btn btn-accent btn-sm">Apply Now</a>
+            </div>
+            
+            <button class="menu-toggle" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Blog Header -->
+    <section class="destinations-hero" style="background: linear-gradient(to bottom, #F5F3FF, var(--bg-page));">
+        <div class="container max-w-800">
+            <span class="section-tag">Guides & Insights</span>
+            <h1>Blog & Visa Resources</h1>
+            <p class="section-desc" style="margin-bottom: 0;">Get the latest updates on international visa policies, university deadlines, student accommodation, and step-by-step guides.</p>
+        </div>
+    </section>
+
+    <!-- Blog Content -->
+    <section class="section">
+        <div class="container blog-layout">
+            
+            <!-- Main Content Area -->
+            <main>
+                <!-- Featured Article -->
+                <article class="featured-blog-card">
+                    <div class="featured-blog-img">
+                        <img src="assets/destination_ca.png" alt="Canadian Study Permit Cap" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="featured-blog-content">
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar-alt"></i> July 1, 2026</span>
+                            <span><i class="far fa-user"></i> By Immigration Team</span>
+                            <span><i class="far fa-clock"></i> 8 Min Read</span>
+                        </div>
+                        <h2><a href="blog-canada-permit.html">Navigating the 2026 Canadian Study Permit Cap: Strategy Guide</a></h2>
+                        <p>With Canada's new study permit allocations, finding the right Designated Learning Institution (DLI) is more important than ever. Discover how Provincial Attestation Letters (PALs) work and how our matched matching system bypasses queues.</p>
+                        <a href="blog-canada-permit.html" class="btn btn-accent">Read Full Article</a>
+                    </div>
+                </article>
+
+                <!-- Blog Grid -->
+                <div class="blog-grid" id="blogGrid">
+                    
+                    <!-- Blog Card 1 -->
+                    <div class="blog-card" data-category="visa">
+                        <div class="blog-card-img">
+                            <img src="assets/blog_desk.png" alt="SDS Visa Guide" style="width: 100%; height: 200px; object-fit: cover;">
+                        </div>
+                        <div class="blog-card-content">
+                            <div class="blog-meta">
+                                <span><i class="far fa-calendar-alt"></i> June 28, 2026</span>
+                                <span><i class="far fa-clock"></i> 5 Min Read</span>
+                            </div>
+                            <h3><a href="blog-sds-visa.html" style="color: var(--text-dark);">How to Secure a Canadian Visa Under the Student Direct Stream (SDS)</a></h3>
+                            <p>Everything you need to know about GIC requirements, language tests, and SDS processing speeds.</p>
+                            <a href="blog-sds-visa.html" class="link-arrow" style="margin-top: auto; font-weight: 600;">Read Post <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Blog Card 2 -->
+                    <div class="blog-card" data-category="visa">
+                        <div class="blog-card-img">
+                            <img src="assets/hero_student.png" alt="UK Graduate Route" style="width: 100%; height: 200px; object-fit: cover;">
+                        </div>
+                        <div class="blog-card-content">
+                            <div class="blog-meta">
+                                <span><i class="far fa-calendar-alt"></i> June 20, 2026</span>
+                                <span><i class="far fa-clock"></i> 6 Min Read</span>
+                            </div>
+                            <h3>Step-by-Step Guide to the UK Graduate Route (PSW Visa)</h3>
+                            <p>Understand the eligibility, fees, and requirements to work in the UK for 2 years after graduation.</p>
+                            <a href="#" class="link-arrow" style="margin-top: auto; font-weight: 600;">Read Post <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Blog Card 3 -->
+                    <div class="blog-card" data-category="scholarships">
+                        <div class="blog-card-img">
+                            <svg width="100%" height="200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="100%" height="200" fill="url(#blog3Grad)"/>
+                                <text x="20" y="160" fill="white" font-family="'Outfit', sans-serif" font-size="20px" font-weight="700">US Scholarships</text>
+                                <defs>
+                                    <linearGradient id="blog3Grad" x1="0" y1="0" x2="100%" y2="200">
+                                        <stop offset="0%" stop-color="#10B981"/>
+                                        <stop offset="100%" stop-color="#312E81"/>
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                        </div>
+                        <div class="blog-card-content">
+                            <div class="blog-meta">
+                                <span><i class="far fa-calendar-alt"></i> June 15, 2026</span>
+                                <span><i class="far fa-clock"></i> 7 Min Read</span>
+                            </div>
+                            <h3>Top Scholarships for International Students in the United States</h3>
+                            <p>A compilation of fully-funded government and institutional scholarships for undergraduates and graduates.</p>
+                            <a href="#" class="link-arrow" style="margin-top: auto; font-weight: 600;">Read Post <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Blog Card 4 -->
+                    <div class="blog-card" data-category="student-life">
+                        <div class="blog-card-img">
+                            <svg width="100%" height="200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="100%" height="200" fill="url(#blog4Grad)"/>
+                                <text x="20" y="160" fill="white" font-family="'Outfit', sans-serif" font-size="20px" font-weight="700">Cost of Living</text>
+                                <defs>
+                                    <linearGradient id="blog4Grad" x1="0" y1="0" x2="100%" y2="200">
+                                        <stop offset="0%" stop-color="#F59E0B"/>
+                                        <stop offset="100%" stop-color="#1E1B4B"/>
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                        </div>
+                        <div class="blog-card-content">
+                            <div class="blog-meta">
+                                <span><i class="far fa-calendar-alt"></i> May 29, 2026</span>
+                                <span><i class="far fa-clock"></i> 5 Min Read</span>
+                            </div>
+                            <h3>Student Budget Guide: Toronto vs. Vancouver</h3>
+                            <p>An honest comparison of transit, rent, groceries, and student employment rates in Canada's largest cities.</p>
+                            <a href="#" class="link-arrow" style="margin-top: auto; font-weight: 600;">Read Post <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                </div>
+            </main>
+
+            <!-- Sidebar Area -->
+            <aside class="blog-sidebar">
+                
+                <!-- Search Widget -->
+                <div class="sidebar-widget">
+                    <h3 class="sidebar-title">Search Articles</h3>
+                    <div class="search-widget-form">
+                        <input type="text" placeholder="Type keywords..." class="search-widget-input" aria-label="Search articles">
+                        <button class="search-widget-btn" aria-label="Search"><i class="fas fa-search"></i></button>
+                    </div>
+                </div>
+
+                <!-- Categories Widget -->
+                <div class="sidebar-widget">
+                    <h3 class="sidebar-title">Categories</h3>
+                    <ul class="category-list" id="blogCategories">
+                        <li><a href="#" data-filter="all">All Articles</a> <span class="category-count">5</span></li>
+                        <li><a href="#" data-filter="visa">Visa Regulations</a> <span class="category-count">3</span></li>
+                        <li><a href="#" data-filter="scholarships">Scholarships</a> <span class="category-count">1</span></li>
+                        <li><a href="#" data-filter="student-life">Student Life</a> <span class="category-count">1</span></li>
+                    </ul>
+                </div>
+
+                <!-- Promotion Card -->
+                <div class="sidebar-ad-card">
+                    <h3>Unsure of Your Options?</h3>
+                    <p>Get a customized university match list in 5 minutes by filling out our eligibility questionnaire.</p>
+                    <a href="register.html" class="btn btn-accent btn-full">Start Assessment</a>
+                </div>
+
+            </aside>
+            
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">
+                    <div class="logo-icon" style="background: white; color: var(--primary);">AN</div>
+                    <span style="color: white;">AdmissionNavigator</span>
+                </a>
+                <p>Simplifying international student admissions, matching programs, and global visa procedures through technology.</p>
+                <div class="footer-socials">
+                    <a href="#" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            
+            <div>
+                <h3 class="footer-title">Destinations</h3>
+                <ul class="footer-links">
+                    <li><a href="destinations.html">Study in Canada</a></li>
+                    <li><a href="destinations.html">Study in United Kingdom</a></li>
+                    <li><a href="destinations.html">Study in United States</a></li>
+                    <li><a href="destinations.html">Study in Australia</a></li>
+                    <li><a href="destinations.html">Study in Ireland</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h3 class="footer-title">Company</h3>
+                <ul class="footer-links">
+                    <li><a href="story.html">Our Story</a></li>
+                    <li><a href="careers.html">Careers</a></li>
+                    <li><a href="blog.html">Blog & Visa Guides</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-newsletter">
+                <h3 class="footer-title">Stay Updated</h3>
+                <p>Subscribe to our newsletter for country guides, scholarship announcements, and visa updates.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your email address" class="newsletter-input" required aria-label="Newsletter email address">
+                    <button type="submit" class="newsletter-btn" aria-label="Subscribe"><i class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; <span id="footerYear"></span> AdmissionNavigator. All rights reserved. &nbsp;|&nbsp; Designed by <a href="#" style="color: var(--accent); opacity:1; font-weight:600;">DCTechOfficial</a></p>
+            <div class="footer-bottom-links">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="legal.html">Terms of Service</a>
+                <a href="legal.html">Legal Notices</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Blog Specific Filter Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const catLinks = document.querySelectorAll('#blogCategories a');
+            const blogCards = document.querySelectorAll('#blogGrid .blog-card');
+            
+            catLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const filter = link.getAttribute('data-filter');
+                    
+                    blogCards.forEach(card => {
+                        const cat = card.getAttribute('data-category');
+                        if (filter === 'all' || cat === filter) {
+                            card.style.display = 'flex';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+    <script src="main.js"></script>
+</body>
+</html>

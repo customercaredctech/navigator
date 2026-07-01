@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careers at AdmissionNavigator - Join Our Team</title>
+    <!-- FontAwesome Icon CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="header">
+        <div class="nav-container">
+            <a href="index.html" class="logo" id="headerLogo">
+                <div class="logo-icon">AN</div>
+                <span>AdmissionNavigator</span>
+            </a>
+            
+            <nav class="nav-bar">
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="destinations.html" class="nav-link">Study Destinations</a></li>
+                    <li><a href="blog.html" class="nav-link">Blog</a></li>
+                    <li><a href="careers.html" class="nav-link">Careers</a></li>
+                    <li><a href="story.html" class="nav-link">Our Story</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact Us</a></li>
+                </ul>
+            </nav>
+            
+            <div class="nav-actions">
+                <a href="login.html" class="btn btn-secondary btn-sm">Sign In</a>
+                <a href="register.html" class="btn btn-accent btn-sm">Apply Now</a>
+            </div>
+            
+            <button class="menu-toggle" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Careers Hero -->
+    <section class="destinations-hero" style="background: linear-gradient(to bottom, #FFF7ED, var(--bg-page));">
+        <div class="container max-w-800">
+            <span class="section-tag">Join Our Mission</span>
+            <h1>Help Us Build the Future of Global Admissions</h1>
+            <p class="section-desc" style="margin-bottom: 0;">At AdmissionNavigator, we connect dreams with classrooms. Explore open roles across engineering, sales, marketing, and student advisement in Canada and remotely.</p>
+        </div>
+    </section>
+
+    <!-- Cultural Perks Section -->
+    <section class="section">
+        <div class="container">
+            <div class="text-center max-w-600">
+                <span class="section-tag">Life at AdmissionNavigator</span>
+                <h2 class="section-title">Our Benefits & Work Culture</h2>
+                <p class="section-desc">We foster an inclusive, performance-driven culture designed to help you thrive professionally and personally.</p>
+            </div>
+            
+            <div class="perks-grid">
+                <div class="perk-card">
+                    <div class="perk-icon"><i class="fas fa-laptop-house"></i></div>
+                    <h3>Flexible Work Model</h3>
+                    <p>Work from our offices in Toronto or Vancouver, choose hybrid schedules, or apply for full-remote positions in designated provinces.</p>
+                </div>
+                
+                <div class="perk-card">
+                    <div class="perk-icon"><i class="fas fa-heartbeat"></i></div>
+                    <h3>Comprehensive Health Care</h3>
+                    <p>Premium medical, dental, and vision insurance coverage starting day one, plus dedicated mental wellness stipends.</p>
+                </div>
+                
+                <div class="perk-card">
+                    <div class="perk-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <h3>Learning & Growth</h3>
+                    <p>Receive up to $2,000 CAD per year in professional development budgets for courses, conferences, or certification programs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Open Positions Section -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="text-center max-w-600">
+                <span class="section-tag">Current Openings</span>
+                <h2 class="section-title">Explore Open Roles</h2>
+                <p class="section-desc">Find your fit. Select a department filter below to explore open positions.</p>
+            </div>
+            
+            <div class="jobs-filter-bar" id="jobFilterBar">
+                <button class="filter-btn active" data-filter="all">All Jobs</button>
+                <button class="filter-btn" data-filter="engineering">Engineering</button>
+                <button class="filter-btn" data-filter="sales">Sales & Advisement</button>
+                <button class="filter-btn" data-filter="marketing">Marketing</button>
+            </div>
+            
+            <div class="jobs-list" id="jobsListContainer">
+                
+                <!-- Job 1 -->
+                <div class="job-row" data-category="engineering">
+                    <div class="job-info">
+                        <h3>Senior Frontend Developer</h3>
+                        <div class="job-meta-tags">
+                            <div class="job-tag"><i class="fas fa-map-marker-alt"></i> Toronto, ON (Hybrid)</div>
+                            <div class="job-tag"><i class="fas fa-briefcase"></i> Full-Time</div>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" onclick="alert('Thank you for your interest! The job application portal is currently simulated. Please contact careers@admissionnavigator.com.')">Apply Now</button>
+                </div>
+
+                <!-- Job 2 -->
+                <div class="job-row" data-category="sales">
+                    <div class="job-info">
+                        <h3>Senior Student Success Advisor</h3>
+                        <div class="job-meta-tags">
+                            <div class="job-tag"><i class="fas fa-map-marker-alt"></i> Vancouver, BC (Remote)</div>
+                            <div class="job-tag"><i class="fas fa-briefcase"></i> Full-Time</div>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" onclick="alert('Thank you for your interest! The job application portal is currently simulated. Please contact careers@admissionnavigator.com.')">Apply Now</button>
+                </div>
+
+                <!-- Job 3 -->
+                <div class="job-row" data-category="engineering">
+                    <div class="job-info">
+                        <h3>Full Stack Software Engineer (Node/React)</h3>
+                        <div class="job-meta-tags">
+                            <div class="job-tag"><i class="fas fa-map-marker-alt"></i> Toronto, ON (Hybrid)</div>
+                            <div class="job-tag"><i class="fas fa-briefcase"></i> Full-Time</div>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" onclick="alert('Thank you for your interest! The job application portal is currently simulated. Please contact careers@admissionnavigator.com.')">Apply Now</button>
+                </div>
+
+                <!-- Job 4 -->
+                <div class="job-row" data-category="marketing">
+                    <div class="job-info">
+                        <h3>Digital Growth Specialist</h3>
+                        <div class="job-meta-tags">
+                            <div class="job-tag"><i class="fas fa-map-marker-alt"></i> Toronto, ON (Hybrid)</div>
+                            <div class="job-tag"><i class="fas fa-briefcase"></i> Full-Time</div>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" onclick="alert('Thank you for your interest! The job application portal is currently simulated. Please contact careers@admissionnavigator.com.')">Apply Now</button>
+                </div>
+
+                <!-- Job 5 -->
+                <div class="job-row" data-category="sales">
+                    <div class="job-info">
+                        <h3>Partnership Success Manager</h3>
+                        <div class="job-meta-tags">
+                            <div class="job-tag"><i class="fas fa-map-marker-alt"></i> Remote (Canada)</div>
+                            <div class="job-tag"><i class="fas fa-briefcase"></i> Full-Time</div>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" onclick="alert('Thank you for your interest! The job application portal is currently simulated. Please contact careers@admissionnavigator.com.')">Apply Now</button>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">
+                    <div class="logo-icon" style="background: white; color: var(--primary);">AN</div>
+                    <span style="color: white;">AdmissionNavigator</span>
+                </a>
+                <p>Simplifying international student admissions, matching programs, and global visa procedures through technology.</p>
+                <div class="footer-socials">
+                    <a href="#" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            
+            <div>
+                <h3 class="footer-title">Destinations</h3>
+                <ul class="footer-links">
+                    <li><a href="destinations.html">Study in Canada</a></li>
+                    <li><a href="destinations.html">Study in United Kingdom</a></li>
+                    <li><a href="destinations.html">Study in United States</a></li>
+                    <li><a href="destinations.html">Study in Australia</a></li>
+                    <li><a href="destinations.html">Study in Ireland</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h3 class="footer-title">Company</h3>
+                <ul class="footer-links">
+                    <li><a href="story.html">Our Story</a></li>
+                    <li><a href="careers.html">Careers</a></li>
+                    <li><a href="blog.html">Blog & Visa Guides</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-newsletter">
+                <h3 class="footer-title">Stay Updated</h3>
+                <p>Subscribe to our newsletter for country guides, scholarship announcements, and visa updates.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your email address" class="newsletter-input" required aria-label="Newsletter email address">
+                    <button type="submit" class="newsletter-btn" aria-label="Subscribe"><i class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; <span id="footerYear"></span> AdmissionNavigator. All rights reserved. &nbsp;|&nbsp; Designed by <a href="#" style="color: var(--accent); opacity:1; font-weight:600;">DCTechOfficial</a></p>
+            <div class="footer-bottom-links">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="legal.html">Terms of Service</a>
+                <a href="legal.html">Legal Notices</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Job Filter Specific Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const filterBtns = document.querySelectorAll('#jobFilterBar .filter-btn');
+            const jobRows = document.querySelectorAll('#jobsListContainer .job-row');
+            
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    
+                    const filter = btn.getAttribute('data-filter');
+                    
+                    jobRows.forEach(row => {
+                        const cat = row.getAttribute('data-category');
+                        if (filter === 'all' || cat === filter) {
+                            row.style.display = 'flex';
+                        } else {
+                            row.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+    <script src="main.js"></script>
+</body>
+</html>

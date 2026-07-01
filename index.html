@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AdmissionNavigator - Study Abroad & Global Student Admissions</title>
+    <!-- FontAwesome Icon CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="header">
+        <div class="nav-container">
+            <a href="index.html" class="logo" id="headerLogo">
+                <div class="logo-icon">AN</div>
+                <span>AdmissionNavigator</span>
+            </a>
+            
+            <nav class="nav-bar">
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="destinations.html" class="nav-link">Study Destinations</a></li>
+                    <li><a href="blog.html" class="nav-link">Blog</a></li>
+                    <li><a href="careers.html" class="nav-link">Careers</a></li>
+                    <li><a href="story.html" class="nav-link">Our Story</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact Us</a></li>
+                </ul>
+            </nav>
+            
+            <div class="nav-actions">
+                <a href="login.html" class="btn btn-secondary btn-sm">Sign In</a>
+                <a href="register.html" class="btn btn-accent btn-sm">Apply Now</a>
+            </div>
+            
+            <button class="menu-toggle" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-grid">
+            <div class="hero-content animate-fade-in-up">
+                <h1>Navigate Your Global <span>Education Journey</span></h1>
+                <p>AdmissionNavigator simplifies the study abroad process. Find your perfect university, manage your application, and secure your study visa—all in one smart portal.</p>
+                
+                <div class="hero-search">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search courses, universities, or countries..." aria-label="Search courses or countries">
+                    <button class="btn btn-primary" onclick="window.location.href='destinations.html'">Find Match</button>
+                </div>
+                
+                <div class="hero-badges">
+                    <div class="hero-badge">
+                        <i class="fas fa-check-circle"></i>
+                        <span>100% Secure Portal</span>
+                    </div>
+                    <div class="hero-badge">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Official Partner of 1,500+ Schools</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hero-image">
+                <img src="assets/hero_student.png" alt="International Students" class="hero-illustration" style="border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); width: 100%; max-width: 500px; height: auto;">
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Strip -->
+    <section class="stats-strip" id="statsStrip">
+        <div class="container stats-grid">
+            <div class="stat-item">
+                <h3>95%+</h3>
+                <p>Visa Approval Success Rate</p>
+            </div>
+            <div class="stat-item">
+                <h3>10,000+</h3>
+                <p>Global Students Placed</p>
+            </div>
+            <div class="stat-item">
+                <h3>1,500+</h3>
+                <p>Partner Colleges & Universities</p>
+            </div>
+            <div class="stat-item">
+                <h3>24/7</h3>
+                <p>Dedicated Canadian Visa Support</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Designed for Success -->
+    <section class="section">
+        <div class="container">
+            <div class="text-center max-w-600">
+                <span class="section-tag">Empowering Education</span>
+                <h2 class="section-title">Designed for the Entire Education Ecosystem</h2>
+                <p class="section-desc">Whether you are a student aspiring to study abroad, a recruitment partner, or an academic institution, we build the connections you need.</p>
+            </div>
+            
+            <div class="audience-grid">
+                <div class="audience-card">
+                    <div class="audience-icon">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <h3>For Students</h3>
+                    <p>Search over 100,000 course options, apply to multiple colleges with a single application, track your visa progress, and get expert local support.</p>
+                    <a href="register.html" class="link-arrow">Start Student Journey <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <div class="audience-card">
+                    <div class="audience-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>For Recruitment Partners</h3>
+                    <p>Leverage our advanced admissions portal. Earn competitive commissions, offer more choice to your students, and secure higher visa approval rates.</p>
+                    <a href="contact.html" class="link-arrow">Partner With Us <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <div class="audience-card">
+                    <div class="audience-icon">
+                        <i class="fas fa-university"></i>
+                    </div>
+                    <h3>For Schools & Universities</h3>
+                    <p>Reach qualified applicants from over 100 countries. Diverse classrooms, simplified application processing, and verified document evaluation.</p>
+                    <a href="contact.html" class="link-arrow">Become a Partner Institution <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Highlighted Destinations -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="text-center max-w-600">
+                <span class="section-tag">Global Choices</span>
+                <h2 class="section-title">Popular Study Destinations</h2>
+                <p class="section-desc">Unlock doors to countries offering world-class academic institutions, post-study work permits, and excellent quality of life.</p>
+            </div>
+            
+            <div class="country-grid">
+                <!-- Canada Card -->
+                <div class="country-card">
+                    <div class="country-image-placeholder">
+                        <img src="assets/destination_ca.png" alt="Study in Canada" style="width: 100%; height: 100%; object-fit: cover;">
+                        <!-- Flag badge -->
+                        <img src="https://flagcdn.com/w80/ca.png" alt="Canada Flag" class="country-flag-overlay">
+                    </div>
+                    <div class="country-card-content">
+                        <h3>Canada</h3>
+                        <p class="country-desc">Top preference for international students with high-quality education and excellent PGWPP opportunities.</p>
+                        <div class="country-stats">
+                            <div class="country-stat-box">
+                                <span>Visa Success</span>
+                                <strong>96%</strong>
+                            </div>
+                            <div class="country-stat-box">
+                                <span>PR Opportunity</span>
+                                <strong>High</strong>
+                            </div>
+                        </div>
+                        <ul class="country-features">
+                            <li><i class="fas fa-check"></i> Post-Graduate Work Permit up to 3 years</li>
+                            <li><i class="fas fa-check"></i> Part-time work permitted (20-24 hrs/wk)</li>
+                        </ul>
+                        <a href="destinations.html#canada" class="btn btn-secondary">Explore Canada</a>
+                    </div>
+                </div>
+
+                <!-- UK Card -->
+                <div class="country-card">
+                    <div class="country-image-placeholder">
+                        <img src="assets/destination_uk.png" alt="Study in United Kingdom" style="width: 100%; height: 100%; object-fit: cover;">
+                        <!-- Flag badge -->
+                        <img src="https://flagcdn.com/w80/gb.png" alt="United Kingdom Flag" class="country-flag-overlay">
+                    </div>
+                    <div class="country-card-content">
+                        <h3>United Kingdom</h3>
+                        <p class="country-desc">Home to historic universities and dynamic programs with accelerated 1-year master's degrees.</p>
+                        <div class="country-stats">
+                            <div class="country-stat-box">
+                                <span>Visa Success</span>
+                                <strong>94%</strong>
+                            </div>
+                            <div class="country-stat-box">
+                                <span>Graduate Route</span>
+                                <strong>2 Years</strong>
+                            </div>
+                        </div>
+                        <ul class="country-features">
+                            <li><i class="fas fa-check"></i> 2-Year Graduate Route Work Permit</li>
+                            <li><i class="fas fa-check"></i> Fast-track degrees (Short duration)</li>
+                        </ul>
+                        <a href="destinations.html#uk" class="btn btn-secondary">Explore United Kingdom</a>
+                    </div>
+                </div>
+
+                <!-- USA Card -->
+                <div class="country-card">
+                    <div class="country-image-placeholder">
+                        <img src="assets/destination_us.png" alt="Study in United States" style="width: 100%; height: 100%; object-fit: cover;">
+                        <!-- Flag badge -->
+                        <img src="https://flagcdn.com/w80/us.png" alt="United States Flag" class="country-flag-overlay">
+                    </div>
+                    <div class="country-card-content">
+                        <h3>United States</h3>
+                        <p class="country-desc">Leading destination for engineering, technology, and STEM OPT internship options.</p>
+                        <div class="country-stats">
+                            <div class="country-stat-box">
+                                <span>Visa Success</span>
+                                <strong>92%</strong>
+                            </div>
+                            <div class="country-stat-box">
+                                <span>STEM OPT extension</span>
+                                <strong>36 Months</strong>
+                            </div>
+                        </div>
+                        <ul class="country-features">
+                            <li><i class="fas fa-check"></i> Curricular Practical Training (CPT)</li>
+                            <li><i class="fas fa-check"></i> High globally-ranked institutions</li>
+                        </ul>
+                        <a href="destinations.html#usa" class="btn btn-secondary">Explore USA</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center" style="margin-top: 4rem;">
+                <a href="destinations.html" class="btn btn-primary">View All Destinations</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="section">
+        <div class="container">
+            <div class="text-center max-w-600">
+                <span class="section-tag">Simplified Process</span>
+                <h2 class="section-title">How AdmissionNavigator Works</h2>
+                <p class="section-desc">Our intelligent platform coordinates every stage of your study abroad process in four simple steps.</p>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-step">
+                    <div class="timeline-badge">1</div>
+                    <div class="timeline-content">
+                        <h3>Build Student Profile</h3>
+                        <p>Complete our interactive 10-Question registration wizard in minutes. We gather your academic scores, budget, and destination preferences.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-step">
+                    <div class="timeline-badge">2</div>
+                    <div class="timeline-content">
+                        <h3>Receive College Matches</h3>
+                        <p>Our smart matching engine filters courses across Canada, UK, and USA to present programs where you have the highest probability of admission.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-step">
+                    <div class="timeline-badge">3</div>
+                    <div class="timeline-content">
+                        <h3>Single-Portal Application</h3>
+                        <p>Upload your academic documents once. Apply to multiple universities directly through our dashboard without filling duplicate forms.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-step">
+                    <div class="timeline-badge">4</div>
+                    <div class="timeline-content">
+                        <h3>Visa Filing & Landing Support</h3>
+                        <p>Receive end-to-end guidance from licensed Canadian immigration advisors (RCICs) to ensure your study permit documentation is flawless.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Banner Section -->
+    <section class="container section">
+        <div class="cta-banner text-center">
+            <div class="cta-banner-content max-w-800">
+                <h2>Ready to Start Your International Journey?</h2>
+                <p>Join thousands of students who have navigated their path to overseas colleges successfully. Create your profile today and find your university matches.</p>
+                <div class="cta-buttons">
+                    <a href="register.html" class="btn btn-accent">Start Free Profile Assessment</a>
+                    <a href="contact.html" class="btn btn-secondary" style="color: white; border-color: rgba(255,255,255,0.4)">Talk to a Counselor</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">
+                    <div class="logo-icon" style="background: white; color: var(--primary);">AN</div>
+                    <span style="color: white;">AdmissionNavigator</span>
+                </a>
+                <p>Simplifying international student admissions, matching programs, and global visa procedures through technology.</p>
+                <div class="footer-socials">
+                    <a href="#" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            
+            <div>
+                <h3 class="footer-title">Destinations</h3>
+                <ul class="footer-links">
+                    <li><a href="destinations.html">Study in Canada</a></li>
+                    <li><a href="destinations.html">Study in United Kingdom</a></li>
+                    <li><a href="destinations.html">Study in United States</a></li>
+                    <li><a href="destinations.html">Study in Australia</a></li>
+                    <li><a href="destinations.html">Study in Ireland</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h3 class="footer-title">Company</h3>
+                <ul class="footer-links">
+                    <li><a href="story.html">Our Story</a></li>
+                    <li><a href="careers.html">Careers</a></li>
+                    <li><a href="blog.html">Blog & Visa Guides</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-newsletter">
+                <h3 class="footer-title">Stay Updated</h3>
+                <p>Subscribe to our newsletter for country guides, scholarship announcements, and visa updates.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your email address" class="newsletter-input" required aria-label="Newsletter email address">
+                    <button type="submit" class="newsletter-btn" aria-label="Subscribe"><i class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; <span id="footerYear"></span> AdmissionNavigator. All rights reserved. &nbsp;|&nbsp; Designed by <a href="#" style="color: var(--accent); opacity:1; font-weight:600;">DCTechOfficial</a></p>
+            <div class="footer-bottom-links">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="legal.html">Terms of Service</a>
+                <a href="legal.html">Legal Notices</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Shared JS -->
+    <script src="main.js"></script>
+</body>
+</html>

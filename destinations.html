@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Abroad Destinations - AdmissionNavigator</title>
+    <!-- FontAwesome Icon CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="header">
+        <div class="nav-container">
+            <a href="index.html" class="logo" id="headerLogo">
+                <div class="logo-icon">AN</div>
+                <span>AdmissionNavigator</span>
+            </a>
+            
+            <nav class="nav-bar">
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="destinations.html" class="nav-link">Study Destinations</a></li>
+                    <li><a href="blog.html" class="nav-link">Blog</a></li>
+                    <li><a href="careers.html" class="nav-link">Careers</a></li>
+                    <li><a href="story.html" class="nav-link">Our Story</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact Us</a></li>
+                </ul>
+            </nav>
+            
+            <div class="nav-actions">
+                <a href="login.html" class="btn btn-secondary btn-sm">Sign In</a>
+                <a href="register.html" class="btn btn-accent btn-sm">Apply Now</a>
+            </div>
+            
+            <button class="menu-toggle" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Destinations Hero -->
+    <section class="destinations-hero">
+        <div class="container max-w-800">
+            <span class="section-tag">Explore the World</span>
+            <h1>Study Destinations</h1>
+            <p class="section-desc" style="margin-bottom: 0;">Compare top academic destinations to find the country that matches your career aspirations, academic credentials, and budget constraints.</p>
+        </div>
+    </section>
+
+    <!-- Country Filter Panel -->
+    <section class="section" style="padding-top: 2rem;">
+        <div class="container">
+            <div class="jobs-filter-bar" id="countryFilterBar">
+                <button class="filter-btn active" data-filter="all">All Countries</button>
+                <button class="filter-btn" data-filter="popular">Popular</button>
+                <button class="filter-btn" data-filter="high-success">95%+ Visa Success</button>
+                <button class="filter-btn" data-filter="work-permit">3+ Year Work Permit</button>
+            </div>
+            
+            <div class="country-grid" id="countryCardGrid">
+                
+                <!-- Canada Card -->
+                <div class="country-card" id="canada" data-category="popular high-success work-permit">
+                    <div class="country-image-placeholder">
+                        <img src="assets/destination_ca.png" alt="Study in Canada" style="width: 100%; height: 100%; object-fit: cover;">
+                        <!-- Flag badge -->
+                        <img src="https://flagcdn.com/w80/ca.png" alt="Canada Flag" class="country-flag-overlay">
+                    </div>
+                    <div class="country-card-content">
+                        <h3>Canada</h3>
+                        <p class="country-desc">Top preference for international students with high-quality education and excellent PGWPP opportunities.</p>
+                        <div class="country-stats">
+                            <div class="country-stat-box">
+                                <span>Visa Success</span>
+                                <strong>96%</strong>
+                            </div>
+                            <div class="country-stat-box">
+                                <span>Avg Tuition/Yr</span>
+                                <strong>$20,000 CAD</strong>
+                            </div>
+                        </div>
+                        <ul class="country-features">
+                            <li><i class="fas fa-check"></i> Post-Graduate Work Permit up to 3 years</li>
+                            <li><i class="fas fa-check"></i> Express Entry PR pathways available</li>
+                            <li><i class="fas fa-check"></i> Part-time work permitted (20-24 hrs/wk)</li>
+                        </ul>
+                        <a href="register.html" class="btn btn-primary btn-full">Check Match Eligibility</a>
+                    </div>
+                </div>
+
+                <!-- United Kingdom Card -->
+                <div class="country-card" id="uk" data-category="popular work-permit">
+                    <div class="country-image-placeholder">
+                        <img src="assets/destination_uk.png" alt="Study in United Kingdom" style="width: 100%; height: 100%; object-fit: cover;">
+                        <!-- Flag badge -->
+                        <img src="https://flagcdn.com/w80/gb.png" alt="United Kingdom Flag" class="country-flag-overlay">
+                    </div>
+                    <div class="country-card-content">
+                        <h3>United Kingdom</h3>
+                        <p class="country-desc">Home to historic universities and dynamic programs with accelerated 1-year master's degrees.</p>
+                        <div class="country-stats">
+                            <div class="country-stat-box">
+                                <span>Visa Success</span>
+                                <strong>94%</strong>
+                            </div>
+                            <div class="country-stat-box">
+                                <span>Avg Tuition/Yr</span>
+                                <strong>£16,000 GBP</strong>
+                            </div>
+                        </div>
+                        <ul class="country-features">
+                            <li><i class="fas fa-check"></i> 2-Year Graduate Route Work Permit</li>
+                            <li><i class="fas fa-check"></i> Fast-track degrees (Short duration)</li>
+                            <li><i class="fas fa-check"></i> No IELTS options available at select schools</li>
+                        </ul>
+                        <a href="register.html" class="btn btn-primary btn-full">Check Match Eligibility</a>
+                    </div>
+                </div>
+
+                <!-- United States Card -->
+                <div class="country-card" id="usa" data-category="popular">
+                    <div class="country-image-placeholder">
+                        <img src="assets/destination_us.png" alt="Study in United States" style="width: 100%; height: 100%; object-fit: cover;">
+                        <!-- Flag badge -->
+                        <img src="https://flagcdn.com/w80/us.png" alt="United States Flag" class="country-flag-overlay">
+                    </div>
+                    <div class="country-card-content">
+                        <h3>United States</h3>
+                        <p class="country-desc">Leading destination for engineering, technology, and STEM OPT internship options.</p>
+                        <div class="country-stats">
+                            <div class="country-stat-box">
+                                <span>Visa Success</span>
+                                <strong>92%</strong>
+                            </div>
+                            <div class="country-stat-box">
+                                <span>Avg Tuition/Yr</span>
+                                <strong>$28,000 USD</strong>
+                            </div>
+                        </div>
+                        <ul class="country-features">
+                            <li><i class="fas fa-check"></i> Curricular Practical Training (CPT)</li>
+                            <li><i class="fas fa-check"></i> STEM OPT Extension of 24 months (3 yrs total)</li>
+                            <li><i class="fas fa-check"></i> Rich campus life and massive research grants</li>
+                        </ul>
+                        <a href="register.html" class="btn btn-primary btn-full">Check Match Eligibility</a>
+                    </div>
+                </div>
+
+                <!-- Australia Card -->
+                <div class="country-card" id="australia" data-category="popular high-success work-permit">
+                    <div class="country-image-placeholder">
+                        <img src="assets/destination_au.png" alt="Study in Australia" style="width: 100%; height: 100%; object-fit: cover;">
+                        <!-- Flag badge -->
+                        <img src="https://flagcdn.com/w80/au.png" alt="Australia Flag" class="country-flag-overlay">
+                    </div>
+                    <div class="country-card-content">
+                        <h3>Australia</h3>
+                        <p class="country-desc">High student satisfaction rates and post-study work routes in regional and metro campus hubs.</p>
+                        <div class="country-stats">
+                            <div class="country-stat-box">
+                                <span>Visa Success</span>
+                                <strong>95%</strong>
+                            </div>
+                            <div class="country-stat-box">
+                                <span>Avg Tuition/Yr</span>
+                                <strong>$32,000 AUD</strong>
+                            </div>
+                        </div>
+                        <ul class="country-features">
+                            <li><i class="fas fa-check"></i> Subclass 485 visa pathways (2-5 years)</li>
+                            <li><i class="fas fa-check"></i> High minimum wage for student jobs</li>
+                            <li><i class="fas fa-check"></i> Warm weather & lifestyle-focused environment</li>
+                        </ul>
+                        <a href="register.html" class="btn btn-primary btn-full">Check Match Eligibility</a>
+                    </div>
+                </div>
+
+                <!-- Ireland Card -->
+                <div class="country-card" id="ireland" data-category="high-success">
+                    <div class="country-image-placeholder">
+                        <img src="assets/destination_ie.png" alt="Study in Ireland" style="width: 100%; height: 100%; object-fit: cover;">
+                        <!-- Flag badge -->
+                        <img src="https://flagcdn.com/w80/ie.png" alt="Ireland Flag" class="country-flag-overlay">
+                    </div>
+                    <div class="country-card-content">
+                        <h3>Ireland</h3>
+                        <p class="country-desc">The technology hub of Europe hosting HQs of Google, Apple, and Meta with excellent graduate routes.</p>
+                        <div class="country-stats">
+                            <div class="country-stat-box">
+                                <span>Visa Success</span>
+                                <strong>97%</strong>
+                            </div>
+                            <div class="country-stat-box">
+                                <span>Avg Tuition/Yr</span>
+                                <strong>€14,000 EUR</strong>
+                            </div>
+                        </div>
+                        <ul class="country-features">
+                            <li><i class="fas fa-check"></i> 2-Year Third Level Graduate Scheme</li>
+                            <li><i class="fas fa-check"></i> English speaking European hub</li>
+                            <li><i class="fas fa-check"></i> Huge demand for IT and Finance skills</li>
+                        </ul>
+                        <a href="register.html" class="btn btn-primary btn-full">Check Match Eligibility</a>
+                    </div>
+                </div>
+
+                <!-- Germany Card -->
+                <div class="country-card" id="germany" data-category="high-success">
+                    <div class="country-image-placeholder">
+                        <img src="assets/destination_de.png" alt="Study in Germany" style="width: 100%; height: 100%; object-fit: cover;">
+                        <!-- Flag badge -->
+                        <img src="https://flagcdn.com/w80/de.png" alt="Germany Flag" class="country-flag-overlay">
+                    </div>
+                    <div class="country-card-content">
+                        <h3>Germany</h3>
+                        <p class="country-desc">World-renowned public universities offering low or zero tuition fees for engineering & sciences.</p>
+                        <div class="country-stats">
+                            <div class="country-stat-box">
+                                <span>Visa Success</span>
+                                <strong>96%</strong>
+                            </div>
+                            <div class="country-stat-box">
+                                <span>Avg Tuition/Yr</span>
+                                <strong>€500 EUR (Semester Fee)</strong>
+                            </div>
+                        </div>
+                        <ul class="country-features">
+                            <li><i class="fas fa-check"></i> Free education in public universities</li>
+                            <li><i class="fas fa-check"></i> 18-month post-study visa to search for jobs</li>
+                            <li><i class="fas fa-check"></i> Strong industrial internship networks</li>
+                        </ul>
+                        <a href="register.html" class="btn btn-primary btn-full">Check Match Eligibility</a>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">
+                    <div class="logo-icon" style="background: white; color: var(--primary);">AN</div>
+                    <span style="color: white;">AdmissionNavigator</span>
+                </a>
+                <p>Simplifying international student admissions, matching programs, and global visa procedures through technology.</p>
+                <div class="footer-socials">
+                    <a href="#" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            
+            <div>
+                <h3 class="footer-title">Destinations</h3>
+                <ul class="footer-links">
+                    <li><a href="destinations.html">Study in Canada</a></li>
+                    <li><a href="destinations.html">Study in United Kingdom</a></li>
+                    <li><a href="destinations.html">Study in United States</a></li>
+                    <li><a href="destinations.html">Study in Australia</a></li>
+                    <li><a href="destinations.html">Study in Ireland</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h3 class="footer-title">Company</h3>
+                <ul class="footer-links">
+                    <li><a href="story.html">Our Story</a></li>
+                    <li><a href="careers.html">Careers</a></li>
+                    <li><a href="blog.html">Blog & Visa Guides</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-newsletter">
+                <h3 class="footer-title">Stay Updated</h3>
+                <p>Subscribe to our newsletter for country guides, scholarship announcements, and visa updates.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your email address" class="newsletter-input" required aria-label="Newsletter email address">
+                    <button type="submit" class="newsletter-btn" aria-label="Subscribe"><i class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; <span id="footerYear"></span> AdmissionNavigator. All rights reserved. &nbsp;|&nbsp; Designed by <a href="#" style="color: var(--accent); opacity:1; font-weight:600;">DCTechOfficial</a></p>
+            <div class="footer-bottom-links">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="legal.html">Terms of Service</a>
+                <a href="legal.html">Legal Notices</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Destinations Specific JS -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const filterBtns = document.querySelectorAll('#countryFilterBar .filter-btn');
+            const countryCards = document.querySelectorAll('#countryCardGrid .country-card');
+            
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Remove active from all
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    
+                    const filterValue = btn.getAttribute('data-filter');
+                    
+                    countryCards.forEach(card => {
+                        const categories = card.getAttribute('data-category').split(' ');
+                        
+                        if (filterValue === 'all') {
+                            card.style.display = 'flex';
+                        } else if (categories.includes(filterValue)) {
+                            card.style.display = 'flex';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+    <script src="main.js"></script>
+</body>
+</html>
