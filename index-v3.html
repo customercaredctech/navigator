@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AdmissionNavigator — Global Education Experts | Design v3</title>
+  <meta name="description" content="AdmissionNavigator — expert guidance for study abroad, university applications, and student visa processing.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+  /* ═══════════════════════════════════════
+     DESIGN v3 — Clean, Corporate, Professional
+     Palette: Royal Blue, Slate, Crisp White
+     Fonts:   Plus Jakarta Sans
+  ═══════════════════════════════════════ */
+  :root {
+    --primary:     #2563EB; /* Royal Blue */
+    --primary-dk:  #1D4ED8;
+    --primary-lt:  #EFF6FF;
+    --accent:      #F59E0B; /* Amber */
+    --accent-hover:#D97706;
+    --success:     #10B981;
+    --text-dark:   #0F172A;
+    --text-main:   #334155;
+    --text-muted:  #64748B;
+    --bg-page:     #F8FAFC;
+    --bg-white:    #FFFFFF;
+    --border:      #E2E8F0;
+
+    --font-main: 'Plus Jakarta Sans', sans-serif;
+    --header-h: 80px;
+    --max-w: 1280px;
+
+    --shadow-sm: 0 1px 3px rgba(15,23,42,.08);
+    --shadow-md: 0 4px 12px rgba(15,23,42,.05);
+    --shadow-lg: 0 12px 32px rgba(15,23,42,.08);
+    --shadow-xl: 0 20px 48px rgba(37,99,235,.12);
+
+    --radius-sm: 8px;
+    --radius-md: 16px;
+    --radius-lg: 24px;
+    --radius-xl: 32px;
+    --transition: .3s cubic-bezier(.4,0,.2,1);
+  }
+
+  *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--font-main);
+    background: var(--bg-page);
+    color: var(--text-main);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  img { max-width: 100%; display: block; }
+  a { text-decoration: none; color: inherit; }
+  ul { list-style: none; }
+  h1, h2, h3, h4 { color: var(--text-dark); font-weight: 700; line-height: 1.2; letter-spacing: -0.02em; }
+  
+  .container { width: 100%; max-width: var(--max-w); margin: 0 auto; padding: 0 2rem; }
+  .section { padding: 5rem 0; }
+  .section-light { background: var(--bg-white); }
+  
+  .badge {
+    display: inline-flex; align-items: center; gap: .5rem;
+    background: var(--primary-lt); color: var(--primary-dk);
+    padding: .35rem .875rem; border-radius: 999px;
+    font-size: .8rem; font-weight: 700; text-transform: uppercase; letter-spacing: .05em;
+    margin-bottom: 1.5rem;
+  }
+  .badge i { font-size: .9rem; }
+
+  /* ── BUTTONS ── */
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
+    font-weight: 600; font-size: .95rem;
+    padding: .75rem 1.75rem; border-radius: var(--radius-sm);
+    cursor: pointer; transition: var(--transition); border: none;
+    white-space: nowrap; font-family: inherit;
+  }
+  .btn-primary { background: var(--primary); color: white; box-shadow: 0 4px 14px rgba(37,99,235,.25); }
+  .btn-primary:hover { background: var(--primary-dk); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(37,99,235,.35); }
+  
+  .btn-outline { background: transparent; color: var(--primary); border: 2px solid var(--primary); }
+  .btn-outline:hover { background: var(--primary-lt); }
+
+  .btn-accent { background: var(--accent); color: white; box-shadow: 0 4px 14px rgba(245,158,11,.25); }
+  .btn-accent:hover { background: var(--accent-hover); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(245,158,11,.35); }
+  
+  .btn-lg { padding: 1rem 2.25rem; font-size: 1.05rem; border-radius: 12px; }
+  .btn-sm { padding: .5rem 1.25rem; font-size: .875rem; }
+
+
+  /* ═══════════ HEADER ═══════════ */
+  .header-v3 {
+    height: var(--header-h);
+    background: rgba(255,255,255,.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+    position: sticky; top: 0; z-index: 100;
+  }
+  .header-inner {
+    height: 100%; display: flex; align-items: center; justify-content: space-between;
+  }
+  
+  /* Logo */
+  .logo-v3 { display: flex; align-items: center; gap: .75rem; }
+  .logo-icon {
+    width: 40px; height: 40px; border-radius: var(--radius-sm);
+    background: linear-gradient(135deg, var(--primary), var(--primary-dk));
+    display: flex; align-items: center; justify-content: center;
+    color: white; font-weight: 800; font-size: 1.1rem;
+    box-shadow: var(--shadow-sm);
+  }
+  .logo-text { font-size: 1.25rem; font-weight: 800; color: var(--text-dark); letter-spacing: -0.02em; }
+  
+  /* Nav */
+  .nav-v3 ul { display: flex; gap: .5rem; }
+  .nav-v3 a {
+    font-size: .95rem; font-weight: 600; color: var(--text-main);
+    padding: .5rem 1rem; border-radius: var(--radius-sm);
+    transition: var(--transition);
+  }
+  .nav-v3 a:hover, .nav-v3 a.active { color: var(--primary); background: var(--primary-lt); }
+
+  .header-actions { display: flex; align-items: center; gap: 1rem; }
+  
+  /* Mobile Menu */
+  .hamburger-v3 {
+    display: none; flex-direction: column; gap: 4px;
+    background: none; border: none; cursor: pointer; padding: .5rem;
+  }
+  .hamburger-v3 span { width: 24px; height: 2px; background: var(--text-dark); transition: var(--transition); }
+  
+  .mobile-menu {
+    display: none; position: fixed; top: var(--header-h); left: 0; right: 0;
+    background: white; padding: 1.5rem; border-bottom: 1px solid var(--border);
+    box-shadow: var(--shadow-lg); z-index: 99; flex-direction: column; gap: .5rem;
+  }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a { padding: .75rem 1rem; font-weight: 600; border-radius: var(--radius-sm); }
+  .mobile-menu a:hover { background: var(--bg-page); color: var(--primary); }
+
+  /* ═══════════ HERO ═══════════ */
+  .hero-v3 {
+    padding: 6rem 0;
+    background: linear-gradient(180deg, var(--bg-white) 0%, var(--bg-page) 100%);
+    position: relative; overflow: hidden;
+  }
+  .hero-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;
+  }
+  .hero-content h1 {
+    font-size: clamp(2.5rem, 4vw, 4rem);
+    margin-bottom: 1.5rem; line-height: 1.1;
+  }
+  .hero-content h1 span { color: var(--primary); }
+  .hero-content p {
+    font-size: 1.125rem; color: var(--text-muted);
+    margin-bottom: 2.5rem; max-width: 500px;
+  }
+  .hero-buttons { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 3rem; }
+  
+  .hero-stats { display: flex; gap: 3rem; border-top: 1px solid var(--border); padding-top: 2rem; }
+  .h-stat strong { display: block; font-size: 1.75rem; font-weight: 800; color: var(--text-dark); }
+  .h-stat span { font-size: .875rem; font-weight: 500; color: var(--text-muted); }
+
+  .hero-image-wrap { position: relative; }
+  .hero-img {
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-xl);
+    overflow: hidden;
+  }
+  .hero-img img { width: 100%; height: auto; display: block; }
+  
+  /* Floating card */
+  .hero-float-card {
+    position: absolute; bottom: -2rem; left: -2rem;
+    background: white; padding: 1.5rem; border-radius: var(--radius-md);
+    box-shadow: var(--shadow-lg); display: flex; gap: 1rem; align-items: center;
+    border: 1px solid var(--border);
+  }
+  .hf-icon {
+    width: 48px; height: 48px; border-radius: 50%;
+    background: var(--success); color: white; font-size: 1.25rem;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+  .hero-float-card div strong { display: block; font-size: 1.1rem; color: var(--text-dark); }
+  .hero-float-card div span { font-size: .875rem; color: var(--text-muted); font-weight: 500; }
+
+  /* ═══════════ SERVICES / PROCESS ═══════════ */
+  .process-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;
+    margin-top: 3rem;
+  }
+  .process-card {
+    background: white; padding: 2.5rem 2rem;
+    border-radius: var(--radius-md); border: 1px solid var(--border);
+    box-shadow: var(--shadow-sm); transition: var(--transition);
+  }
+  .process-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); border-color: var(--primary-lt); }
+  .p-icon {
+    width: 56px; height: 56px; border-radius: 12px;
+    background: var(--primary-lt); color: var(--primary);
+    font-size: 1.5rem; display: flex; align-items: center; justify-content: center;
+    margin-bottom: 1.5rem;
+  }
+  .process-card h3 { font-size: 1.25rem; margin-bottom: 1rem; }
+  .process-card p { color: var(--text-muted); font-size: .95rem; }
+
+  /* ═══════════ DESTINATIONS ═══════════ */
+  .dest-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 3rem; flex-wrap: wrap; gap: 1rem; }
+  .dest-header h2 { font-size: clamp(2rem, 3vw, 2.5rem); max-width: 500px; }
+  
+  .dest-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+  .dest-card {
+    background: white; border-radius: var(--radius-md);
+    overflow: hidden; border: 1px solid var(--border);
+    transition: var(--transition); display: block;
+  }
+  .dest-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); }
+  .d-img { height: 160px; overflow: hidden; position: relative; }
+  .d-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s; }
+  .dest-card:hover .d-img img { transform: scale(1.05); }
+  
+  .d-body { padding: 1.5rem; }
+  .d-title { display: flex; align-items: center; gap: .75rem; margin-bottom: .5rem; }
+  .d-title img { width: 24px; border-radius: 3px; box-shadow: 0 1px 2px rgba(0,0,0,.1); }
+  .d-title h3 { font-size: 1.1rem; }
+  .d-body p { font-size: .875rem; color: var(--text-muted); margin-bottom: 1rem; }
+  .d-link { font-size: .875rem; font-weight: 700; color: var(--primary); display: inline-flex; align-items: center; gap: .25rem; }
+  .dest-card:hover .d-link { gap: .5rem; }
+
+  /* ═══════════ WHY CHOOSE US (SPLIT) ═══════════ */
+  .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+  .why-list { margin-top: 2rem; display: flex; flex-direction: column; gap: 1.5rem; }
+  .why-item { display: flex; gap: 1rem; }
+  .why-item i { color: var(--primary); font-size: 1.25rem; margin-top: .25rem; }
+  .why-item h4 { font-size: 1.1rem; margin-bottom: .25rem; }
+  .why-item p { font-size: .95rem; color: var(--text-muted); }
+
+  .why-image { border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-lg); }
+  .why-image img { width: 100%; height: auto; }
+
+  /* ═══════════ TESTIMONIALS ═══════════ */
+  .testi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 3rem; }
+  .testi-card {
+    background: white; padding: 2rem; border-radius: var(--radius-md);
+    border: 1px solid var(--border); box-shadow: var(--shadow-sm);
+  }
+  .t-stars { color: var(--accent); margin-bottom: 1rem; font-size: .875rem; }
+  .testi-card p { font-size: .95rem; font-style: italic; color: var(--text-main); margin-bottom: 1.5rem; }
+  .t-author { display: flex; align-items: center; gap: 1rem; }
+  .t-avatar {
+    width: 48px; height: 48px; border-radius: 50%;
+    background: var(--primary-lt); color: var(--primary);
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 1.1rem;
+  }
+  .t-author strong { display: block; font-size: .95rem; }
+  .t-author span { font-size: .8rem; color: var(--text-muted); }
+
+  /* ═══════════ CTA BANNER ═══════════ */
+  .cta-section { padding: 6rem 0; }
+  .cta-box {
+    background: linear-gradient(135deg, var(--primary-dk), var(--primary));
+    border-radius: var(--radius-xl); padding: 4rem 2rem;
+    text-align: center; color: white; box-shadow: var(--shadow-xl);
+  }
+  .cta-box h2 { color: white; font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 1rem; }
+  .cta-box p { font-size: 1.1rem; color: rgba(255,255,255,.9); margin-bottom: 2.5rem; max-width: 600px; margin-inline: auto; }
+  .cta-box .btn-white { background: white; color: var(--primary); }
+  .cta-box .btn-white:hover { background: var(--bg-page); }
+
+  /* ═══════════ FOOTER ═══════════ */
+  .footer-v3 { background: var(--text-dark); color: white; padding: 5rem 0 2rem; }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 4rem; margin-bottom: 4rem; }
+  .f-logo { display: flex; align-items: center; gap: .5rem; margin-bottom: 1.5rem; }
+  .f-logo .logo-icon { background: white; color: var(--primary); }
+  .f-logo .logo-text { color: white; }
+  .footer-v3 p { color: #94A3B8; font-size: .95rem; line-height: 1.6; }
+  
+  .f-socials { display: flex; gap: 1rem; margin-top: 1.5rem; }
+  .f-socials a {
+    width: 36px; height: 36px; border-radius: 50%;
+    background: rgba(255,255,255,.1); display: flex; align-items: center; justify-content: center;
+    color: white; transition: var(--transition);
+  }
+  .f-socials a:hover { background: var(--primary); }
+
+  .f-col h4 { color: white; font-size: 1.05rem; margin-bottom: 1.5rem; }
+  .f-col ul { display: flex; flex-direction: column; gap: .75rem; }
+  .f-col a { color: #94A3B8; font-size: .95rem; transition: var(--transition); }
+  .f-col a:hover { color: white; }
+
+  .nl-box { background: rgba(255,255,255,.05); padding: 1.5rem; border-radius: var(--radius-md); }
+  .nl-form { display: flex; gap: .5rem; margin-top: 1rem; }
+  .nl-form input {
+    flex: 1; padding: .75rem 1rem; border-radius: var(--radius-sm);
+    border: 1px solid rgba(255,255,255,.2); background: transparent;
+    color: white; font-family: inherit;
+  }
+  .nl-form button { padding: .75rem 1rem; border-radius: var(--radius-sm); }
+
+  .footer-bottom {
+    display: flex; justify-content: space-between; align-items: center;
+    padding-top: 2rem; border-top: 1px solid rgba(255,255,255,.1);
+    color: #94A3B8; font-size: .875rem; flex-wrap: wrap; gap: 1rem;
+  }
+  .f-links { display: flex; gap: 1.5rem; }
+  .f-links a:hover { color: white; }
+
+  /* ═══════════ RESPONSIVE ═══════════ */
+  @media (max-width: 1024px) {
+    .hero-grid, .why-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .hero-float-card { left: 50%; transform: translateX(-50%); bottom: -2rem; width: 90%; }
+    .process-grid, .testi-grid { grid-template-columns: repeat(2, 1fr); }
+    .dest-grid { grid-template-columns: repeat(2, 1fr); }
+    .footer-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 768px) {
+    .nav-v3, .header-actions { display: none; }
+    .hamburger-v3 { display: flex; }
+    .process-grid, .testi-grid, .dest-grid, .footer-grid { grid-template-columns: 1fr; }
+    .hero-content h1 { font-size: 2.25rem; }
+    .hero-stats { flex-direction: column; gap: 1.5rem; }
+    .cta-box { padding: 3rem 1.5rem; }
+  }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header-v3" id="hdr">
+  <div class="container header-inner">
+    <a href="index-v3.html" class="logo-v3">
+      <div class="logo-icon">AN</div>
+      <div class="logo-text">AdmissionNavigator</div>
+    </a>
+    
+    <nav class="nav-v3">
+      <ul>
+        <li><a href="index-v3.html" class="active">Home</a></li>
+        <li><a href="destinations.html">Destinations</a></li>
+        <li><a href="blog.html">Resources</a></li>
+        <li><a href="story.html">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    
+    <div class="header-actions">
+      <a href="login.html" class="btn btn-outline btn-sm">Sign In</a>
+      <a href="register.html" class="btn btn-primary btn-sm">Get Started</a>
+    </div>
+
+    <button class="hamburger-v3" id="menuBtn">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<nav class="mobile-menu" id="mobMenu">
+  <a href="index-v3.html">Home</a>
+  <a href="destinations.html">Destinations</a>
+  <a href="blog.html">Resources</a>
+  <a href="story.html">About Us</a>
+  <a href="contact.html">Contact</a>
+  <a href="login.html" style="color:var(--primary); margin-top:.5rem;">Sign In</a>
+  <a href="register.html" class="btn btn-primary" style="text-align:center;">Get Started</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero-v3">
+  <div class="container hero-grid">
+    <div class="hero-content">
+      <div class="badge"><i class="fas fa-check-circle"></i> RCIC Certified Consultants</div>
+      <h1>Your Global Future Starts <span>Right Here.</span></h1>
+      <p>Navigate your study abroad journey with confidence. We combine expert human guidance with smart technology to secure your admission and visa.</p>
+      
+      <div class="hero-buttons">
+        <a href="register.html" class="btn btn-primary btn-lg">Start Free Assessment</a>
+        <a href="contact.html" class="btn btn-outline btn-lg">Talk to an Advisor</a>
+      </div>
+      
+      <div class="hero-stats">
+        <div class="h-stat">
+          <strong>15,000+</strong>
+          <span>Students Placed</span>
+        </div>
+        <div class="h-stat">
+          <strong>94%</strong>
+          <span>Visa Success Rate</span>
+        </div>
+        <div class="h-stat">
+          <strong>1,500+</strong>
+          <span>University Partners</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="hero-image-wrap">
+      <div class="hero-img">
+        <img src="assets/v3_hero_pro.png" alt="Happy international students on campus">
+      </div>
+      <div class="hero-float-card">
+        <div class="hf-icon"><i class="fas fa-file-signature"></i></div>
+        <div>
+          <strong>Document Portal</strong>
+          <span>Track your applications in real-time</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section section-light">
+  <div class="container">
+    <div style="text-align: center; max-width: 600px; margin: 0 auto;">
+      <h2 style="font-size: 2.25rem;">How We Simplify Your Journey</h2>
+      <p style="color: var(--text-muted); margin-top: 1rem;">A structured, transparent process designed to eliminate stress and maximize your chances of acceptance.</p>
+    </div>
+    
+    <div class="process-grid">
+      <div class="process-card">
+        <div class="p-icon"><i class="fas fa-laptop-code"></i></div>
+        <h3>1. Profile Evaluation</h3>
+        <p>Complete our intelligent assessment to identify the best programs based on your academic background and budget.</p>
+      </div>
+      <div class="process-card">
+        <div class="p-icon"><i class="fas fa-university"></i></div>
+        <h3>2. Program Selection</h3>
+        <p>Review personalized recommendations from over 1,500 top-tier institutions across 6 major countries.</p>
+      </div>
+      <div class="process-card">
+        <div class="p-icon"><i class="fas fa-passport"></i></div>
+        <h3>3. Visa Processing</h3>
+        <p>Our RCIC-certified team handles your study permit application, ensuring compliance with all immigration rules.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DESTINATIONS -->
+<section class="section">
+  <div class="container">
+    <div class="dest-header">
+      <div>
+        <h2 style="font-size: 2.25rem;">Top Study Destinations</h2>
+        <p style="color: var(--text-muted); margin-top: .5rem;">Explore world-class education hubs with exceptional post-study work opportunities.</p>
+      </div>
+      <a href="destinations.html" class="btn btn-outline">Explore All <i class="fas fa-arrow-right"></i></a>
+    </div>
+    
+    <div class="dest-grid">
+      <a href="destinations.html#canada" class="dest-card">
+        <div class="d-img"><img src="assets/destination_ca.png" alt="Canada"></div>
+        <div class="d-body">
+          <div class="d-title"><img src="https://flagcdn.com/w40/ca.png" alt="Flag"> <h3>Canada</h3></div>
+          <p>3-Year Post-Graduation Work Permit and direct pathways to Permanent Residency.</p>
+          <span class="d-link">View Programs <i class="fas fa-chevron-right"></i></span>
+        </div>
+      </a>
+      <a href="destinations.html#uk" class="dest-card">
+        <div class="d-img"><img src="assets/destination_uk.png" alt="UK"></div>
+        <div class="d-body">
+          <div class="d-title"><img src="https://flagcdn.com/w40/gb.png" alt="Flag"> <h3>United Kingdom</h3></div>
+          <p>2-Year Graduate Route visa and prestigious Russell Group universities.</p>
+          <span class="d-link">View Programs <i class="fas fa-chevron-right"></i></span>
+        </div>
+      </a>
+      <a href="destinations.html#usa" class="dest-card">
+        <div class="d-img"><img src="assets/destination_us.png" alt="USA"></div>
+        <div class="d-body">
+          <div class="d-title"><img src="https://flagcdn.com/w40/us.png" alt="Flag"> <h3>United States</h3></div>
+          <p>Up to 3 years of OPT for STEM graduates in the world's largest economy.</p>
+          <span class="d-link">View Programs <i class="fas fa-chevron-right"></i></span>
+        </div>
+      </a>
+      <a href="destinations.html#australia" class="dest-card">
+        <div class="d-img"><img src="assets/destination_au.png" alt="Australia"></div>
+        <div class="d-body">
+          <div class="d-title"><img src="https://flagcdn.com/w40/au.png" alt="Flag"> <h3>Australia</h3></div>
+          <p>High quality of life, excellent weather, and up to 4 years post-study work rights.</p>
+          <span class="d-link">View Programs <i class="fas fa-chevron-right"></i></span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="section section-light">
+  <div class="container why-grid">
+    <div>
+      <div class="badge"><i class="fas fa-star"></i> The AdmissionNavigator Advantage</div>
+      <h2 style="font-size: 2.25rem; margin-bottom: 1rem;">Expertise You Can Trust</h2>
+      <p style="color: var(--text-muted); font-size: 1.1rem;">We don't just process applications; we architect careers. Our comprehensive approach ensures you are supported at every step.</p>
+      
+      <div class="why-list">
+        <div class="why-item">
+          <i class="fas fa-user-tie"></i>
+          <div>
+            <h4>Regulated Consultants</h4>
+            <p>Our advisors are certified professionals, guaranteeing accurate and lawful immigration advice.</p>
+          </div>
+        </div>
+        <div class="why-item">
+          <i class="fas fa-cogs"></i>
+          <div>
+            <h4>Smart Platform</h4>
+            <p>A unified digital dashboard to track applications, upload documents, and communicate with your advisor.</p>
+          </div>
+        </div>
+        <div class="why-item">
+          <i class="fas fa-handshake"></i>
+          <div>
+            <h4>End-to-End Support</h4>
+            <p>From university shortlisting to securing accommodation abroad, we are with you all the way.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="why-image">
+      <img src="assets/v3_students_tech.png" alt="Students reviewing application on laptop">
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section">
+  <div class="container">
+    <div style="text-align: center;">
+      <h2 style="font-size: 2.25rem;">Success Stories</h2>
+      <p style="color: var(--text-muted); margin-top: .5rem;">Hear from students who achieved their study abroad dreams with us.</p>
+    </div>
+    
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="t-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p>"The team at AdmissionNavigator handled my entire Canadian study permit process flawlessly. I secured my visa in just 4 weeks without any stress."</p>
+        <div class="t-author">
+          <div class="t-avatar">PS</div>
+          <div><strong>Priya Sharma</strong><span>Conestoga College, Canada</span></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="t-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p>"Their platform made it so easy to upload documents and track my application status. I highly recommend their services to anyone aiming for the UK."</p>
+        <div class="t-author">
+          <div class="t-avatar">AA</div>
+          <div><strong>Ahmed Al-Farsi</strong><span>University of Birmingham, UK</span></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="t-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p>"The advisors provided honest, transparent advice about which courses fit my background. I am now studying in my dream program!"</p>
+        <div class="t-author">
+          <div class="t-avatar">NO</div>
+          <div><strong>Nkechi Okonkwo</strong><span>Humber College, Canada</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-box">
+      <h2>Ready to Begin Your Global Journey?</h2>
+      <p>Take the first step towards a world-class education. Complete our free profile assessment to discover your best options.</p>
+      <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
+        <a href="register.html" class="btn btn-white btn-lg">Start Free Assessment</a>
+        <a href="contact.html" class="btn btn-accent btn-lg">Contact Us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer-v3">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a href="index-v3.html" class="f-logo">
+          <div class="logo-icon">AN</div>
+          <div class="logo-text">AdmissionNavigator</div>
+        </a>
+        <p>Your trusted partner for global education. We simplify university admissions and visa processing with expert guidance and modern technology.</p>
+        <div class="f-socials">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      
+      <div class="f-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="story.html">About Us</a></li>
+          <li><a href="careers.html">Careers</a></li>
+          <li><a href="blog.html">Blog & News</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      
+      <div class="f-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="register.html">Profile Evaluation</a></li>
+          <li><a href="#">University Admissions</a></li>
+          <li><a href="#">Visa Assistance</a></li>
+          <li><a href="admin-login.html">Partner Portal</a></li>
+        </ul>
+      </div>
+      
+      <div class="f-col">
+        <h4>Stay Updated</h4>
+        <div class="nl-box">
+          <p style="font-size:.875rem; color:white; margin-bottom:.5rem;">Subscribe to our newsletter for the latest study abroad updates.</p>
+          <div class="nl-form">
+            <input type="email" placeholder="Email Address">
+            <button class="btn btn-primary btn-sm"><i class="fas fa-paper-plane"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>&copy; <span id="year"></span> AdmissionNavigator. Designed by <strong style="color:white;">DCTechOfficial</strong>.</p>
+      <div class="f-links">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="legal.html">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Design Switcher -->
+<div style="position:fixed;bottom:1.75rem;right:1.75rem;z-index:9999;display:flex;flex-direction:column;gap:.5rem;align-items:flex-end;">
+  <a href="index.html" style="display:flex;align-items:center;gap:.6rem;background:#1E1B4B;color:white;border-radius:999px;padding:.55rem 1.1rem;font-size:.78rem;font-weight:700;text-decoration:none;box-shadow:0 6px 20px rgba(0,0,0,.15);transition:transform .2s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform=''">
+    <span style="width:10px;height:10px;border-radius:50%;background:linear-gradient(135deg,#4F46E5,#FF5E36);flex-shrink:0;"></span> Design v1
+  </a>
+  <a href="index-alt.html" style="display:flex;align-items:center;gap:.6rem;background:#0B4F3C;color:white;border-radius:999px;padding:.55rem 1.1rem;font-size:.78rem;font-weight:700;text-decoration:none;box-shadow:0 6px 20px rgba(0,0,0,.15);transition:transform .2s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform=''">
+    <span style="width:10px;height:10px;border-radius:50%;background:linear-gradient(135deg,#C9A84C,#1A7A58);flex-shrink:0;"></span> Design v2
+  </a>
+</div>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  
+  // Header scroll
+  const hdr = document.getElementById('hdr');
+  window.addEventListener('scroll', () => {
+    if(window.scrollY > 20) {
+      hdr.style.boxShadow = 'var(--shadow-sm)';
+    } else {
+      hdr.style.boxShadow = 'none';
+    }
+  });
+  
+  // Mobile menu
+  const btn = document.getElementById('menuBtn');
+  const menu = document.getElementById('mobMenu');
+  btn.addEventListener('click', () => {
+    menu.classList.toggle('open');
+  });
+</script>
+</body>
+</html>

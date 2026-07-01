@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AdmissionNavigator — Global Education Consultancy | Alternate Design</title>
+  <meta name="description" content="Navigate your global education journey with AdmissionNavigator — expert guidance for study abroad, university applications, and student visa processing.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles-alt.css">
+</head>
+<body>
+
+<!-- ══════════════════════════════════
+     HEADER
+══════════════════════════════════ -->
+<header class="alt-header" id="altHeader">
+  <div class="container header-inner">
+
+    <!-- Logo -->
+    <a href="index-alt.html" class="alt-logo">
+      <div class="alt-logo-mark"><span>AN</span></div>
+      <div class="alt-logo-text">
+        <strong>AdmissionNavigator</strong>
+        <em>Global Education Consultancy</em>
+      </div>
+    </a>
+
+    <!-- Desktop Nav -->
+    <nav class="alt-nav">
+      <ul>
+        <li><a href="index-alt.html"    class="alt-nav-link active">Home</a></li>
+        <li><a href="destinations.html" class="alt-nav-link">Destinations</a></li>
+        <li><a href="blog.html"         class="alt-nav-link">Visa Guides</a></li>
+        <li><a href="careers.html"      class="alt-nav-link">Careers</a></li>
+        <li><a href="story.html"        class="alt-nav-link">Our Story</a></li>
+        <li><a href="contact.html"      class="alt-nav-link">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <a href="login.html"    class="btn btn-outline btn-sm">Sign In</a>
+      <a href="register.html" class="btn btn-gold btn-sm">Apply Now <i class="fas fa-arrow-right"></i></a>
+      <button class="alt-hamburger" id="hamburgerBtn" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+  </div>
+</header>
+
+<!-- Mobile Nav -->
+<nav class="mobile-nav" id="mobileNav">
+  <a href="index-alt.html">Home</a>
+  <a href="destinations.html">Study Destinations</a>
+  <a href="blog.html">Visa Guides</a>
+  <a href="careers.html">Careers</a>
+  <a href="story.html">Our Story</a>
+  <a href="contact.html">Contact</a>
+  <div class="mobile-btns">
+    <a href="login.html"    class="btn btn-outline btn-sm">Sign In</a>
+    <a href="register.html" class="btn btn-gold btn-sm">Apply Now</a>
+  </div>
+</nav>
+
+
+<!-- ══════════════════════════════════
+     HERO
+══════════════════════════════════ -->
+<section class="alt-hero">
+  <div class="container">
+    <div class="hero-grid">
+
+      <!-- Left copy -->
+      <div class="hero-left">
+        <div class="hero-badge">
+          <div class="hero-badge-dot"><i class="fas fa-globe"></i></div>
+          Trusted by 15,000+ students worldwide
+        </div>
+
+        <h1>Your <em>Dream University</em><br>Is One Step Away</h1>
+
+        <p>AdmissionNavigator guides ambitious students from application to acceptance — covering 6 top study destinations, 1,500+ institutions, and every visa pathway in between.</p>
+
+        <div class="hero-cta">
+          <a href="register.html" class="btn btn-primary btn-lg">
+            <i class="fas fa-compass"></i> Start Free Assessment
+          </a>
+          <a href="destinations.html" class="hero-link">
+            Explore Destinations <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <div class="trust-strip">
+          <div class="trust-item"><i class="fas fa-shield-halved"></i> 100% Secure Portal</div>
+          <div class="trust-item"><i class="fas fa-star"></i> 4.9/5 Student Rating</div>
+          <div class="trust-item"><i class="fas fa-clock"></i> 48-hr Response Time</div>
+        </div>
+      </div>
+
+      <!-- Right image -->
+      <div class="hero-right">
+
+        <!-- Floating card — top left -->
+        <div class="hero-float float-top-left">
+          <div class="hero-float-icon" style="background:rgba(201,168,76,.12);color:#b8860b;">
+            <i class="fas fa-university"></i>
+          </div>
+          <div>
+            <strong>1,500+ Universities</strong>
+            <span>Across 6 countries</span>
+          </div>
+        </div>
+
+        <div class="hero-img-frame">
+          <img src="assets/alt_hero_campus.png" alt="Students on a modern university campus">
+        </div>
+
+        <!-- Floating card — bottom right -->
+        <div class="hero-float float-btm-right">
+          <div class="hero-float-icon" style="background:rgba(11,79,60,.1);color:var(--emerald);">
+            <i class="fas fa-check-circle"></i>
+          </div>
+          <div>
+            <strong>94% Visa Success</strong>
+            <span>Proven track record</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════
+     MARQUEE
+══════════════════════════════════ -->
+<div class="marquee-strip">
+  <div class="marquee-track">
+    <!-- Items duplicated for seamless loop -->
+    <div class="marquee-item"><i class="fas fa-circle-dot"></i> University of Toronto</div>
+    <div class="marquee-item"><i class="fas fa-circle-dot"></i> University of Oxford</div>
+    <div class="marquee-item"><i class="fas fa-circle-dot"></i> MIT — Massachusetts Institute of Technology</div>
+    <div class="marquee-item"><i class="fas fa-circle-dot"></i> University of Melbourne</div>
+    <div class="marquee-item"><i class="fas fa-circle-dot"></i> Humber College</div>
+    <div class="marquee-item"><i class="fas fa-circle-dot"></i> Heidelberg University</div>
+    <div class="marquee-item"><i class="fas fa-circle-dot"></i> Trinity College Dublin</div>
+    <div class="marquee-item"><i class="fas fa-circle-dot"></i> University of British Columbia</div>
+    <div class="marquee-item"><i class="fas fa-circle-dot"></i> Imperial College London</div>
+    <div class="marquee-item"><i class="fas fa-circle-dot"></i> RMIT University</div>
+    <!-- Duplicates -->
+    <div class="marquee-item"><i class="fas fa-circle-dot"></i> University of Toronto</div>
+    <div class="marquee-item"><i class="fas fa-circle-dot"></i> University of Oxford</div>
+    <div class="marquee-item"><i class="fas fa-circle-dot"></i> MIT — Massachusetts Institute of Technology</div>
+    <div class="marquee-item"><i class="fas fa-circle-dot"></i> University of Melbourne</div>
+    <div class="marquee-item"><i class="fas fa-circle-dot"></i> Humber College</div>
+    <div class="marquee-item"><i class="fas fa-circle-dot"></i> Heidelberg University</div>
+    <div class="marquee-item"><i class="fas fa-circle-dot"></i> Trinity College Dublin</div>
+    <div class="marquee-item"><i class="fas fa-circle-dot"></i> University of British Columbia</div>
+    <div class="marquee-item"><i class="fas fa-circle-dot"></i> Imperial College London</div>
+    <div class="marquee-item"><i class="fas fa-circle-dot"></i> RMIT University</div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════
+     STATS BAND
+══════════════════════════════════ -->
+<div class="stats-band">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <div class="stat-number">15<span>K+</span></div>
+        <p>Students Placed Globally</p>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">1.5<span>K</span></div>
+        <p>Partner Institutions</p>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">94<span>%</span></div>
+        <p>Visa Approval Rate</p>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">6<span>+</span></div>
+        <p>Study Destinations</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════
+     HOW IT WORKS
+══════════════════════════════════ -->
+<section class="section section--alt">
+  <div class="container">
+    <div style="text-align:center; margin-bottom:3.5rem;">
+      <div class="eyebrow" style="justify-content:center;">Our Simple Process</div>
+      <h2 style="font-size:clamp(2rem,3.5vw,2.75rem); max-width:560px; margin:0 auto;">
+        From Inquiry to Admission in <em style="color:var(--emerald);">4 Easy Steps</em>
+      </h2>
+    </div>
+
+    <div class="process-grid">
+      <div class="process-card">
+        <div class="process-icon"><i class="fas fa-clipboard-list"></i></div>
+        <h3>Complete Assessment</h3>
+        <p>Answer 10 quick questions about your education, budget, and destination preferences to build your profile.</p>
+      </div>
+      <div class="process-card">
+        <div class="process-icon"><i class="fas fa-wand-magic-sparkles"></i></div>
+        <h3>Get Matched</h3>
+        <p>Our engine instantly filters 1,500+ programs to surface the top matches based on your eligibility score.</p>
+      </div>
+      <div class="process-card">
+        <div class="process-icon"><i class="fas fa-file-signature"></i></div>
+        <h3>Apply with Guidance</h3>
+        <p>Submit applications with support from our certified RCIC advisors who handle every document detail.</p>
+      </div>
+      <div class="process-card">
+        <div class="process-icon"><i class="fas fa-passport"></i></div>
+        <h3>Secure Your Visa</h3>
+        <p>We file your student permit, track processing queues, and ensure you're travel-ready on time.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════
+     DESTINATIONS
+══════════════════════════════════ -->
+<section class="section">
+  <div class="container">
+    <div style="display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:3rem; flex-wrap:wrap; gap:1.5rem;">
+      <div>
+        <div class="eyebrow">Where Will You Study?</div>
+        <h2 style="font-size:clamp(2rem,3.5vw,2.75rem);">Top Study <em style="color:var(--emerald);">Destinations</em></h2>
+      </div>
+      <a href="destinations.html" class="btn btn-outline">
+        View All Countries <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
+
+    <div class="dest-grid">
+
+      <!-- Canada — wide featured -->
+      <a href="destinations.html#canada" class="dest-card wide">
+        <img src="assets/destination_ca.png" alt="Canada">
+        <div class="dest-card-overlay">
+          <div class="dest-flag"><img src="https://flagcdn.com/w80/ca.png" alt="Canada"></div>
+          <h3>Canada</h3>
+          <p>3-Year PGWP · Express Entry pathway · SDS visa stream available</p>
+          <div class="dest-pills">
+            <span class="dest-pill"><i class="fas fa-graduation-cap"></i> 200+ Colleges</span>
+            <span class="dest-pill"><i class="fas fa-briefcase"></i> Work Permit</span>
+            <span class="dest-pill"><i class="fas fa-home"></i> PR Pathway</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- UK -->
+      <a href="destinations.html#uk" class="dest-card">
+        <img src="assets/destination_uk.png" alt="United Kingdom">
+        <div class="dest-card-overlay">
+          <div class="dest-flag"><img src="https://flagcdn.com/w80/gb.png" alt="UK"></div>
+          <h3>United Kingdom</h3>
+          <p>Graduate Route visa · World-class universities · Scholarship access</p>
+          <div class="dest-pills">
+            <span class="dest-pill">Graduate Route</span>
+            <span class="dest-pill">2 Yr Work Visa</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- USA -->
+      <a href="destinations.html#usa" class="dest-card">
+        <img src="assets/destination_us.png" alt="United States">
+        <div class="dest-card-overlay">
+          <div class="dest-flag"><img src="https://flagcdn.com/w80/us.png" alt="USA"></div>
+          <h3>United States</h3>
+          <p>F-1 Student Visa · OPT & STEM extension · Top QS-ranked schools</p>
+          <div class="dest-pills">
+            <span class="dest-pill">F-1 Visa</span>
+            <span class="dest-pill">OPT 3 Years</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Australia -->
+      <a href="destinations.html#australia" class="dest-card">
+        <img src="assets/destination_au.png" alt="Australia">
+        <div class="dest-card-overlay">
+          <div class="dest-flag"><img src="https://flagcdn.com/w80/au.png" alt="Australia"></div>
+          <h3>Australia</h3>
+          <p>Subclass 500 · Temporary Graduate visa (485) · Group of Eight</p>
+          <div class="dest-pills">
+            <span class="dest-pill">Subclass 500</span>
+            <span class="dest-pill">4 Yr Work Visa</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Ireland -->
+      <a href="destinations.html#ireland" class="dest-card">
+        <img src="assets/destination_ie.png" alt="Ireland">
+        <div class="dest-card-overlay">
+          <div class="dest-flag"><img src="https://flagcdn.com/w80/ie.png" alt="Ireland"></div>
+          <h3>Ireland</h3>
+          <p>Stamp 2 visa · 2-yr stay-back · EU borderless access</p>
+          <div class="dest-pills">
+            <span class="dest-pill">Stamp 2</span>
+            <span class="dest-pill">EU Access</span>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════
+     ABOUT SPLIT SECTION
+══════════════════════════════════ -->
+<section class="section section--alt">
+  <div class="container">
+    <div class="about-grid">
+
+      <!-- Image side -->
+      <div class="about-img">
+        <div class="about-img-main">
+          <img src="assets/alt_about_students.png" alt="Students consulting with advisor">
+        </div>
+        <div class="about-img-badge">
+          <strong>12+</strong>
+          <span>Years of<br>Excellence</span>
+        </div>
+      </div>
+
+      <!-- Text side -->
+      <div class="about-right">
+        <div class="eyebrow">Why Choose Us</div>
+        <h2>We Don't Just Advise —<br><em style="color:var(--emerald);">We Deliver Results</em></h2>
+        <p>Since 2012, AdmissionNavigator has been the bridge between ambitious international students and world-class universities. Our RCIC-certified advisors have processed over 15,000 successful applications.</p>
+        <p>We combine technology-driven matching with personalised human guidance — so every student receives a plan that is uniquely theirs.</p>
+
+        <ul class="about-list">
+          <li>
+            <div class="about-check"><i class="fas fa-check"></i></div>
+            <div>
+              <strong>RCIC-Certified Advisors</strong> — Regulated and licensed immigration consultants at every step.
+            </div>
+          </li>
+          <li>
+            <div class="about-check"><i class="fas fa-check"></i></div>
+            <div>
+              <strong>AI-Powered Matching Engine</strong> — Filtered program recommendations based on your unique profile.
+            </div>
+          </li>
+          <li>
+            <div class="about-check"><i class="fas fa-check"></i></div>
+            <div>
+              <strong>End-to-End Document Support</strong> — From SOP writing to visa file submission, we handle it all.
+            </div>
+          </li>
+          <li>
+            <div class="about-check"><i class="fas fa-check"></i></div>
+            <div>
+              <strong>Post-Landing Services</strong> — Bank account, SIN, housing support once you land.
+            </div>
+          </li>
+        </ul>
+
+        <a href="story.html" class="btn btn-primary">
+          Read Our Story <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════
+     TESTIMONIALS
+══════════════════════════════════ -->
+<section class="section">
+  <div class="container">
+    <div style="text-align:center; margin-bottom:3.5rem;">
+      <div class="eyebrow" style="justify-content:center;">Student Stories</div>
+      <h2 style="font-size:clamp(2rem,3.5vw,2.75rem);">
+        Real Results, <em style="color:var(--emerald);">Real Students</em>
+      </h2>
+    </div>
+
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="testi-quote">"</div>
+        <p>AdmissionNavigator made the entire Canada study permit process effortless. From GIC to IRCC, they handled everything. I received my visa in 6 weeks!</p>
+        <div class="testi-author">
+          <div class="testi-avatar" style="background:linear-gradient(135deg,#0B4F3C,#1A7A58);">P</div>
+          <div>
+            <strong>Priya Sharma</strong>
+            <span>Conestoga College, Ontario</span>
+            <div class="testi-stars">★★★★★</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-card">
+        <div class="testi-quote">"</div>
+        <p>I was confused between 3 countries. Their advisor helped me understand the PGWP advantage in Canada and I got into my dream program on the first try.</p>
+        <div class="testi-author">
+          <div class="testi-avatar" style="background:linear-gradient(135deg,#C9A84C,#E8C96A);color:#3d2d00;">A</div>
+          <div>
+            <strong>Ahmed Al-Farsi</strong>
+            <span>Humber College, Toronto</span>
+            <div class="testi-stars">★★★★★</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-card">
+        <div class="testi-quote">"</div>
+        <p>The 10-step wizard saved so much time. It showed me exactly which programs matched my IELTS score and budget. Absolutely brilliant platform!</p>
+        <div class="testi-author">
+          <div class="testi-avatar" style="background:linear-gradient(135deg,#7C3AED,#A855F7);">N</div>
+          <div>
+            <strong>Nkechi Okonkwo</strong>
+            <span>University of Birmingham, UK</span>
+            <div class="testi-stars">★★★★★</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════
+     CTA BANNER
+══════════════════════════════════ -->
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-inner">
+      <div class="eyebrow" style="justify-content:center;">Ready to Begin?</div>
+      <h2>Start Your Global<br>Education Journey Today</h2>
+      <p>Join 15,000+ students who trusted AdmissionNavigator to plan, apply, and succeed — in Canada, UK, USA, Australia, and beyond.</p>
+      <div class="cta-btns">
+        <a href="register.html" class="btn btn-gold btn-lg">
+          <i class="fas fa-rocket"></i> Begin Free Assessment
+        </a>
+        <a href="contact.html" class="btn btn-outline-white btn-lg">
+          <i class="fas fa-headset"></i> Talk to an Advisor
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════
+     FOOTER
+══════════════════════════════════ -->
+<footer class="alt-footer">
+  <div class="container">
+    <div class="footer-grid">
+
+      <!-- Brand -->
+      <div class="footer-brand">
+        <a href="index-alt.html" class="alt-logo" style="margin-bottom:.25rem;">
+          <div class="alt-logo-mark"><span>AN</span></div>
+          <div class="alt-logo-text">
+            <strong style="color:white;">AdmissionNavigator</strong>
+            <em style="color:var(--gold);">Global Education Consultancy</em>
+          </div>
+        </a>
+        <p>Empowering international students with transparent advice, certified expertise, and technology-driven guidance since 2012.</p>
+        <div class="footer-socials">
+          <a href="#" class="footer-social"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="footer-social"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="footer-social"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="footer-social"><i class="fab fa-youtube"></i></a>
+          <a href="#" class="footer-social"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index-alt.html">Home</a></li>
+          <li><a href="destinations.html">Study Destinations</a></li>
+          <li><a href="blog.html">Visa Guides & Blog</a></li>
+          <li><a href="story.html">Our Story</a></li>
+          <li><a href="careers.html">Careers</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <!-- Services -->
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="register.html">Free Eligibility Check</a></li>
+          <li><a href="#">SOP Writing</a></li>
+          <li><a href="#">Visa Filing</a></li>
+          <li><a href="#">GIC & Bank Support</a></li>
+          <li><a href="#">Post-Landing Help</a></li>
+          <li><a href="admin-login.html">Admin Portal</a></li>
+        </ul>
+      </div>
+
+      <!-- Newsletter -->
+      <div class="footer-col">
+        <h4>Stay Informed</h4>
+        <p class="footer-newsletter" style="margin:0 0 1rem;">
+          <span style="color:rgba(255,255,255,.5);font-size:.875rem;">Get weekly visa updates and intake alerts delivered to your inbox.</span>
+        </p>
+        <div class="newsletter-row">
+          <input type="email" placeholder="Your email address">
+          <button type="button"><i class="fas fa-paper-plane"></i></button>
+        </div>
+        <div style="margin-top:1.5rem; font-size:.8rem; color:rgba(255,255,255,.35);">
+          <i class="fas fa-shield-halved" style="color:var(--gold);margin-right:.35rem;"></i>
+          No spam. Unsubscribe anytime.
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="footer-bottom">
+      <span>&copy; <span id="yr"></span> AdmissionNavigator. All rights reserved.</span>
+      <div class="footer-bottom-links">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="legal.html">Terms of Service</a>
+        <a href="#">Cookie Policy</a>
+        <a href="#" class="designer-credit">Designed by DCTechOfficial</a>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+
+<script>
+  // Year
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // Sticky header
+  const hdr = document.getElementById('altHeader');
+  window.addEventListener('scroll', () => {
+    hdr.classList.toggle('scrolled', window.scrollY > 40);
+  });
+
+  // Hamburger
+  const hbBtn    = document.getElementById('hamburgerBtn');
+  const mobileNv = document.getElementById('mobileNav');
+  hbBtn.addEventListener('click', () => {
+    const open = mobileNv.classList.toggle('open');
+    hbBtn.querySelector('span:nth-child(1)').style.transform = open ? 'rotate(45deg) translate(5px,5px)' : '';
+    hbBtn.querySelector('span:nth-child(2)').style.opacity   = open ? '0' : '1';
+    hbBtn.querySelector('span:nth-child(3)').style.transform = open ? 'rotate(-45deg) translate(5px,-5px)' : '';
+  });
+
+  // Close mobile nav on outside click
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('#hamburgerBtn') && !e.target.closest('#mobileNav')) {
+      mobileNv.classList.remove('open');
+    }
+  });
+</script>
+
+
+<!-- Design Switcher (for client demo) -->
+<a href="index-v3.html" title="Design v3" style="position:fixed;bottom:4rem;right:1.75rem;z-index:9999;display:flex;align-items:center;gap:.6rem;background:#2563EB;color:white;border-radius:999px;padding:.55rem 1.1rem;font-size:.78rem;font-weight:700;text-decoration:none;box-shadow:0 6px 20px rgba(0,0,0,.5);" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform=''"><span style="width:10px;height:10px;border-radius:50%;background:linear-gradient(135deg,#EFF6FF,#F59E0B);flex-shrink:0;"></span> Design v3</a>
+<a href="index.html" title="Switch to Original Design" style="
+  position:fixed; bottom:1.75rem; right:1.75rem; z-index:9999;
+  display:flex; align-items:center; gap:.6rem;
+  background:#1C1C1E; color:white; border-radius:999px;
+  padding:.65rem 1.25rem; font-family:'DM Sans',sans-serif;
+  font-size:.82rem; font-weight:700; text-decoration:none;
+  box-shadow:0 8px 28px rgba(0,0,0,.35); transition:transform .2s;
+" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform=''">
+  <span style="width:14px;height:14px;border-radius:50%;background:linear-gradient(135deg,#4F46E5,#FF5E36);flex-shrink:0;"></span>
+  ? Original Design
+</a>
+</body>
+</html>
